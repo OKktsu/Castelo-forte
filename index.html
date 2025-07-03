@@ -34,7 +34,7 @@
             --cor-acento-dourado-hover: #b89854; /* Tom mais escuro para hover */
             
             /* Cores de Feedback */
-            --cor-receita: #C4A35A;  /* Dourado para receitas */
+            --cor-receita: #34C759;  /* Verde para receitas */
             --cor-despesa: #FF3B30;  /* Vermelho para despesas */
             --cor-transferencia: #a0aec0; /* Cor neutra para transferências */
             --cor-moradia: #FF6384;
@@ -95,7 +95,7 @@
                     </div>
                 </header>
                 <main class="flex-1 p-4 overflow-y-auto mobile-screen-content pb-24 space-y-5">
-                    <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><h3 class="text-sm text-[var(--cor-texto-secundario)]">Saldo disponível</h3><p class="text-3xl font-bold text-[var(--cor-texto-principal)] mt-1">R$ 12.450,75</p></div>
+                    <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><h3 class="text-sm text-[var(--cor-texto-secundario)]">Saldo disponível</h3><p class="text-3xl font-bold text-[var(--cor-acento-dourado)] mt-1">R$ 12.450,75</p></div>
                     <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><div class="flex justify-center items-center space-x-2"><i data-lucide="wallet" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i><i data-lucide="link" class="w-6 h-6 text-[var(--cor-texto-secundario)]"></i><i data-lucide="landmark" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div><h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Conexão Bancária</h3><p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Conecte seus bancos e importe seus lançamentos.</p><button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar agora</button></div>
                     <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl"><h3 class="text-md font-semibold text-[var(--cor-texto-principal)] mb-4">Últimos Lançamentos</h3><div class="space-y-4"><div class="flex items-center justify-between"><div class="flex items-center space-x-3"><i data-lucide="arrow-up-circle" class="w-6 h-6 text-[var(--cor-receita)]"></i><p class="text-[var(--cor-texto-principal)]">Salário</p></div><p class="font-medium text-[var(--cor-receita)]">+ R$ 5.000,00</p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-3"><i data-lucide="arrow-down-circle" class="w-6 h-6 text-[var(--cor-despesa)]"></i><p class="text-[var(--cor-texto-principal)]">Aluguel</p></div><p class="font-medium text-[var(--cor-despesa)]">- R$ 1.500,00</p></div></div></div>
                 </main>
@@ -532,13 +532,13 @@
 
 
             <!-- NAVEGAÇÃO INFERIOR -->
-            <nav class="absolute bottom-0 left-0 right-0 h-20 bg-black/20 backdrop-blur-lg border-t border-[var(--cor-borda)]">
+            <nav class="absolute bottom-0 left-0 right-0 h-20 bg-black/20 backdrop-blur-lg border-t border-[var(--cor-borda)] px-2">
                 <div class="flex justify-around items-center h-full">
-                    <a href="#" class="nav-link flex flex-col items-center justify-center w-1/5 h-full text-[var(--cor-texto-secundario)]" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-xs mt-1">Dashboard</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center w-1/5 h-full text-[var(--cor-texto-secundario)]" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-xs mt-1">Lançamentos</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center w-1/5 h-full" data-screen="5"><button class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors -translate-y-2"><i data-lucide="plus" class="w-8 h-8"></i></button></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center w-1/5 h-full text-[var(--cor-texto-secundario)]" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-xs mt-1">Relatórios</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center w-1/5 h-full text-[var(--cor-texto-secundario)]" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-xs mt-1">Metas</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-[10px] mt-1">Dashboard</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-[10px] mt-1">Lançamentos</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full" data-screen="5"><button class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors -translate-y-1.5"><i data-lucide="plus" class="w-7 h-7"></i></button></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-[10px] mt-1">Relatórios</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-[10px] mt-1">Metas</span></a>
                 </div>
             </nav>
             
@@ -559,7 +559,7 @@
         const nextButton = document.getElementById('next-screen-btn');
         let barChartInstance, pieChartInstance;
         const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-        let currentMonthIndex = 6; // Julho
+        let currentDate = new Date(2025, 6, 1); // Julho 2025
         
         const incomeCategories = ['Salário', 'Vendas', 'Investimentos', 'Outras Receitas'];
         const expenseCategories = ['Moradia', 'Alimentação', 'Transporte', 'Lazer', 'Saúde', 'Educação', 'Outras Despesas'];
@@ -589,20 +589,27 @@
         }
 
         function updateAllMonthDisplays() {
-            const newMonth = months[currentMonthIndex];
-            const prevMonth = months[(currentMonthIndex - 1 + 12) % 12];
-            const nextMonth = months[(currentMonthIndex + 1) % 12];
+            const displayMonth = months[currentDate.getMonth()];
+            const displayYear = currentDate.getFullYear();
+            
+            const prevDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+            const prevMonth = months[prevDate.getMonth()];
+            const prevYear = prevDate.getFullYear();
+
+            const nextDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+            const nextMonth = months[nextDate.getMonth()];
+            const nextYear = nextDate.getFullYear();
 
             document.querySelectorAll('.month-display').forEach(el => {
-                el.innerText = newMonth;
+                el.innerText = `${displayMonth} ${displayYear}`;
             });
 
             document.querySelectorAll('.prev-month-text').forEach(el => {
-                el.innerText = prevMonth;
+                el.innerText = `${prevMonth} ${prevYear}`;
             });
             
             document.querySelectorAll('.next-month-text').forEach(el => {
-                el.innerText = nextMonth;
+                el.innerText = `${nextMonth} ${nextYear}`;
             });
         }
 
@@ -805,19 +812,15 @@
         // Lógica para os botões de navegação de mês
         document.querySelectorAll('.prev-month-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                if (currentMonthIndex > 0) {
-                    currentMonthIndex--;
-                    updateAllMonthDisplays();
-                }
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                updateAllMonthDisplays();
             });
         });
 
         document.querySelectorAll('.next-month-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                if (currentMonthIndex < 11) {
-                    currentMonthIndex++;
-                    updateAllMonthDisplays();
-                }
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                updateAllMonthDisplays();
             });
         });
         
