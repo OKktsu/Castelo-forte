@@ -47,14 +47,15 @@
         .mobile-screen-content { -ms-overflow-style: none; scrollbar-width: none; }
         
         /* Estilo para botão de tipo de transação selecionado */
-        .transaction-type-btn, .theme-btn, .filter-btn {
+        .transaction-type-btn, .theme-btn, .filter-btn, .category-btn {
             background-color: transparent;
             transition: all 0.2s ease-in-out;
         }
-        .transaction-type-btn.selected, .theme-btn.selected, .filter-btn.selected {
-            background-color: var(--fundo-elemento);
+        .transaction-type-btn.selected, .theme-btn.selected, .filter-btn.selected, .category-btn.selected {
+            background-color: var(--cor-selecionada, var(--fundo-elemento));
             color: white;
             font-weight: bold;
+            border-color: transparent;
         }
     </style>
 </head>
@@ -150,7 +151,7 @@
                     <div class="grid grid-cols-3 h-full text-center">
                         <div class="flex flex-col justify-center"><p class="text-xs text-[var(--cor-texto-secundario)]">Entradas</p><p class="font-bold text-[var(--cor-receita)]">R$ 5.000,00</p></div>
                         <div class="flex flex-col justify-center"><p class="text-xs text-[var(--cor-texto-secundario)]">Saídas</p><p class="font-bold text-[var(--cor-despesa)]">-R$ 2.650,20</p></div>
-                        <div class="flex flex-col justify-center"><p class="text-xs text-[var(--cor-texto-secundario)]">Saldo</p><p class="font-bold text-[var(--cor-texto-principal)]">+R$ 2.349,80</p></div>
+                        <div class="flex flex-col justify-center"><p class="text-xs text-[var(--cor-texto-secundario)]">Saldo</p><p class="font-bold text-[var(--cor-acento-dourado)]">+R$ 2.349,80</p></div>
                     </div>
                 </footer>
             </div>
@@ -290,8 +291,8 @@
                             </div>
                             <div id="category-selector-wrapper" class="hidden">
                                 <label for="transaction-category" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Categoria</label>
-                                <select id="transaction-category" required class="mt-1 appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm">
-                                    </select>
+                                <div id="category-buttons-container" class="mt-2 flex flex-wrap gap-2">
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -532,13 +533,19 @@
 
 
             <!-- NAVEGAÇÃO INFERIOR -->
-            <nav class="absolute bottom-0 left-0 right-0 h-20 bg-black/20 backdrop-blur-lg border-t border-[var(--cor-borda)] px-2">
-                <div class="flex justify-around items-center h-full">
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-[10px] mt-1">Dashboard</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-[10px] mt-1">Lançamentos</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full" data-screen="5"><button class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors -translate-y-1.5"><i data-lucide="plus" class="w-7 h-7"></i></button></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-[10px] mt-1">Relatórios</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)]" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-[10px] mt-1">Metas</span></a>
+            <nav class="absolute bottom-0 left-0 right-0 h-20 bg-black/20 backdrop-blur-lg border-t border-[var(--cor-borda)]">
+                <div class="relative flex justify-around items-center h-full">
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-[10px] mt-1">Dashboard</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-[10px] mt-1">Lançamentos</span></a>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <a href="#" class="nav-link" data-screen="5">
+                            <div class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
+                               <i data-lucide="plus" class="w-6 h-6"></i>
+                           </div>
+                        </a>
+                    </div>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-[10px] mt-1">Relatórios</span></a>
+                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-[10px] mt-1">Metas</span></a>
                 </div>
             </nav>
             
@@ -694,38 +701,45 @@
         
         function updateCategorySelector(type) {
             const wrapper = document.getElementById('category-selector-wrapper');
-            const select = document.getElementById('transaction-category');
-            select.innerHTML = ''; // Limpa opções existentes
+            const container = document.getElementById('category-buttons-container');
+            container.innerHTML = ''; // Limpa botões existentes
 
             let categories = [];
             if (type === 'income') {
                 categories = incomeCategories;
                 wrapper.classList.remove('hidden');
-                select.required = true;
             } else if (type === 'expense') {
                 categories = expenseCategories;
                 wrapper.classList.remove('hidden');
-                select.required = true;
             } else { // transfer ou nulo
                 wrapper.classList.add('hidden');
-                select.required = false;
+                return; // Sai da função se não for income/expense
             }
 
-            if (categories.length > 0) {
-                const defaultOption = document.createElement('option');
-                defaultOption.value = "";
-                defaultOption.innerText = "Selecione uma categoria";
-                defaultOption.disabled = true;
-                defaultOption.selected = true;
-                select.appendChild(defaultOption);
-
-                categories.forEach(cat => {
-                    const option = document.createElement('option');
-                    option.value = cat;
-                    option.innerText = cat;
-                    select.appendChild(option);
+            categories.forEach(cat => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.dataset.category = cat;
+                button.innerText = cat;
+                button.className = 'category-btn py-2 px-4 rounded-full text-sm border-2 border-[var(--cor-texto-secundario)] text-[var(--cor-texto-secundario)] transition-colors';
+                
+                button.addEventListener('click', () => {
+                    // Remove 'selected' de todos os botões de categoria
+                    container.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.style.backgroundColor = 'transparent';
+                        btn.style.color = getCssVar('--cor-texto-secundario');
+                        btn.style.borderColor = getCssVar('--cor-texto-secundario');
+                    });
+                    // Adiciona 'selected' ao botão clicado
+                    button.classList.add('selected');
+                    button.style.backgroundColor = getCssVar('--cor-acento-dourado');
+                    button.style.color = 'black';
+                    button.style.borderColor = getCssVar('--cor-acento-dourado');
                 });
-            }
+                
+                container.appendChild(button);
+            });
         }
 
         function showConfirmationModal(message, onConfirm) {
