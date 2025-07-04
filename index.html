@@ -109,10 +109,13 @@
                     <div class="p-4 sticky top-0 bg-[var(--fundo-principal)] z-10">
                         <div class="flex justify-between items-center text-center">
                             <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer prev-month-btn"></i>
-                            <div class="flex-1 flex justify-center items-center space-x-2">
-                                <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
-                                <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
-                                <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                            <div class="flex-1 flex flex-col items-center">
+                                <span class="text-xs text-[var(--cor-texto-secundario)] year-display"></span>
+                                <div class="flex justify-center items-center space-x-2 mt-1">
+                                    <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
+                                    <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
+                                    <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                                </div>
                             </div>
                             <i data-lucide="chevron-right" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer next-month-btn"></i>
                         </div>
@@ -162,10 +165,13 @@
                 <main class="flex-1 p-4 overflow-y-auto mobile-screen-content pb-24 space-y-5">
                     <div class="flex justify-between items-center text-center">
                         <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer prev-month-btn"></i>
-                        <div class="flex-1 flex justify-center items-center space-x-2">
-                            <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
-                            <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
-                            <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                        <div class="flex-1 flex flex-col items-center">
+                            <span class="text-xs text-[var(--cor-texto-secundario)] year-display"></span>
+                            <div class="flex justify-center items-center space-x-2 mt-1">
+                                <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
+                                <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
+                                <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                            </div>
                         </div>
                         <i data-lucide="chevron-right" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer next-month-btn"></i>
                     </div>
@@ -217,10 +223,13 @@
                      <div class="p-4">
                         <div class="flex justify-between items-center text-center">
                             <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer prev-month-btn"></i>
-                            <div class="flex-1 flex justify-center items-center space-x-2">
-                                <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
-                                <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
-                                <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                             <div class="flex-1 flex flex-col items-center">
+                                <span class="text-xs text-[var(--cor-texto-secundario)] year-display"></span>
+                                <div class="flex justify-center items-center space-x-2 mt-1">
+                                    <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
+                                    <span class="py-2 px-4 bg-[var(--fundo-elemento)] text-[var(--cor-texto-principal)] font-bold rounded-full month-display"></span>
+                                    <span class="text-[var(--cor-texto-secundario)] next-month-text"></span>
+                                </div>
                             </div>
                             <i data-lucide="chevron-right" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer next-month-btn"></i>
                         </div>
@@ -608,16 +617,20 @@
             const nextMonth = months[nextDate.getMonth()];
             const nextYear = nextDate.getFullYear();
 
+            document.querySelectorAll('.year-display').forEach(el => {
+                el.innerText = displayYear;
+            });
+
             document.querySelectorAll('.month-display').forEach(el => {
-                el.innerText = `${displayMonth} ${displayYear}`;
+                el.innerText = displayMonth;
             });
 
             document.querySelectorAll('.prev-month-text').forEach(el => {
-                el.innerText = `${prevMonth} ${prevYear}`;
+                el.innerText = prevMonth;
             });
             
             document.querySelectorAll('.next-month-text').forEach(el => {
-                el.innerText = `${nextMonth} ${nextYear}`;
+                el.innerText = nextMonth;
             });
         }
 
