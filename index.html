@@ -293,9 +293,9 @@
                             <div>
                                 <span class="text-sm font-medium text-[var(--cor-texto-secundario)]">Tipo</span>
                                 <div id="transaction-type-selector" class="mt-2 grid grid-cols-3 gap-2 text-sm">
-                                    <button type="button" data-type="expense" class="transaction-type-btn py-3 px-3 rounded-md border-2 border-[var(--cor-despesa)] text-[var(--cor-despesa)]" style="--cor-selecionada: var(--cor-despesa);">Despesa</button>
-                                    <button type="button" data-type="income" class="transaction-type-btn py-3 px-3 rounded-md border-2 border-[var(--cor-receita)] text-[var(--cor-receita)]" style="--cor-selecionada: var(--cor-receita);">Receita</button>
-                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-3 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
+                                    <button type="button" data-type="expense" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-despesa)] text-[var(--cor-despesa)]" style="--cor-selecionada: var(--cor-despesa);">Despesa</button>
+                                    <button type="button" data-type="income" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-receita)] text-[var(--cor-receita)]" style="--cor-selecionada: var(--cor-receita);">Receita</button>
+                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-0 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
                                 </div>
                             </div>
                             <div id="category-selector-wrapper" class="hidden">
@@ -528,6 +528,44 @@
                     </div>
                 </main>
             </div>
+            
+            <!-- TELA DE EDITAR LANÇAMENTO (NOVA) -->
+            <div id="screen-13" class="screen hidden w-full h-full flex flex-col">
+                 <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(6)"></i>
+                    <h1 class="text-xl font-bold text-[var(--cor-texto-principal)]">Editar Lançamento</h1>
+                    <button id="update-transaction-btn" class="font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80 transition-opacity">Salvar</button>
+                 </header>
+                 <main class="flex-1 p-4 overflow-y-auto flex flex-col">
+                    <form id="edit-transaction-form" class="flex flex-col h-full">
+                        <!-- Conteúdo do formulário é idêntico ao de novo lançamento, será populado via JS -->
+                        <div class="flex-1 space-y-6">
+                            <div class="text-center">
+                                <label for="edit-transaction-value" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Valor</label>
+                                <input type="text" id="edit-transaction-value" required class="text-5xl font-bold text-center w-full bg-transparent border-none focus:ring-0 p-0" placeholder="R$ 0,00">
+                            </div>
+                            <div>
+                                <label for="edit-transaction-name" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Nome</label>
+                                <input type="text" id="edit-transaction-name" required class="mt-1 appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm" placeholder="Ex: Salário, Aluguel">
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-[var(--cor-texto-secundario)]">Tipo</span>
+                                <div id="edit-transaction-type-selector" class="mt-2 grid grid-cols-3 gap-2 text-sm">
+                                    <button type="button" data-type="expense" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-despesa)] text-[var(--cor-despesa)]" style="--cor-selecionada: var(--cor-despesa);">Despesa</button>
+                                    <button type="button" data-type="income" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-receita)] text-[var(--cor-receita)]" style="--cor-selecionada: var(--cor-receita);">Receita</button>
+                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
+                                </div>
+                            </div>
+                            <div id="edit-category-selector-wrapper" class="hidden">
+                                <label class="text-sm font-medium text-[var(--cor-texto-secundario)]">Categoria</label>
+                                <div id="edit-category-buttons-container" class="mt-2 flex flex-wrap gap-2">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                 </main>
+            </div>
+
 
             <!-- MODAL DE CONFIRMAÇÃO -->
             <div id="confirmation-modal" class="hidden absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
@@ -547,13 +585,11 @@
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-[10px] mt-1">Dashboard</span></a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-[10px] mt-1">Lançamentos</span></a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i></a>
-                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <a href="#" class="nav-link" data-screen="5">
-                            <div class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
-                               <i data-lucide="plus" class="w-6 h-6"></i>
-                           </div>
-                        </a>
-                    </div>
+                    <a href="#" class="nav-link" data-screen="5">
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[56%] -translate-y-1 bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
+                           <i data-lucide="plus" class="w-6 h-6"></i>
+                       </div>
+                    </a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-[10px] mt-1">Relatórios</span></a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-[10px] mt-1">Metas</span></a>
                 </div>
@@ -611,11 +647,9 @@
             
             const prevDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
             const prevMonth = months[prevDate.getMonth()];
-            const prevYear = prevDate.getFullYear();
 
             const nextDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
             const nextMonth = months[nextDate.getMonth()];
-            const nextYear = nextDate.getFullYear();
 
             document.querySelectorAll('.year-display').forEach(el => {
                 el.innerText = displayYear;
@@ -649,7 +683,7 @@
                 nextBtnContainer.classList.remove('hidden');
 
                 // Esconde a barra de navegação inferior em telas específicas
-                if ([0, 6, 7, 9, 10, 11, 12].includes(index)) { 
+                if ([0, 6, 7, 9, 10, 11, 12, 13].includes(index)) { 
                     nav.classList.add('hidden');
                 } else {
                     nav.classList.remove('hidden');
@@ -661,7 +695,7 @@
                 if (index === 3) {
                     createOrUpdateCharts();
                 }
-                if (index === 5) {
+                if (index === 5 || index === 13) {
                     // Se não houver transação para editar, reseta o formulário
                     if (!currentTransactionToEdit) {
                         document.getElementById('new-transaction-form').reset();
@@ -669,7 +703,7 @@
                             btn.classList.remove('selected');
                             btn.style.backgroundColor = 'transparent';
                         });
-                        updateCategorySelector(null);
+                        updateCategorySelector(null, 'new');
                     }
                 }
             }
@@ -713,9 +747,12 @@
             showScreen(6);
         }
         
-        function updateCategorySelector(type) {
-            const wrapper = document.getElementById('category-selector-wrapper');
-            const container = document.getElementById('category-buttons-container');
+        function updateCategorySelector(type, formType = 'new') {
+            const wrapperId = formType === 'new' ? 'category-selector-wrapper' : 'edit-category-selector-wrapper';
+            const containerId = formType === 'new' ? 'category-buttons-container' : 'edit-category-buttons-container';
+            
+            const wrapper = document.getElementById(wrapperId);
+            const container = document.getElementById(containerId);
             container.innerHTML = ''; // Limpa botões existentes
 
             let categories = [];
@@ -863,18 +900,21 @@
 
         document.getElementById('edit-transaction-btn').addEventListener('click', () => {
             if (!currentTransactionToEdit) return;
+            showScreen(13); // Mostra a tela de edição
             const { type, title, value, category } = currentTransactionToEdit.dataset;
             
-            // Popula o formulário
-            document.getElementById('transaction-name').value = title;
-            document.getElementById('transaction-value').value = parseFloat(value.replace(/[^0-9,-]+/g,"").replace(",","."));
+            // Popula o formulário de edição
+            document.getElementById('edit-transaction-name').value = title;
+            document.getElementById('edit-transaction-value').value = parseFloat(value.replace(/[^0-9,-]+/g,"").replace(",","."));
             
-            const typeBtn = document.querySelector(`.transaction-type-btn[data-type="${type}"]`);
+            const typeBtn = document.querySelector(`#edit-transaction-type-selector [data-type="${type}"]`);
             if (typeBtn) typeBtn.click();
             
-            document.getElementById('transaction-category').value = category;
-
-            showScreen(5);
+            // Seleciona a categoria correta
+            setTimeout(() => {
+                const categoryBtn = document.querySelector(`#edit-category-buttons-container [data-category="${category}"]`);
+                if (categoryBtn) categoryBtn.click();
+            }, 0);
         });
 
         document.getElementById('delete-goal-btn').addEventListener('click', () => {
