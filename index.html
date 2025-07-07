@@ -46,12 +46,12 @@
         .mobile-screen-content::-webkit-scrollbar { display: none; }
         .mobile-screen-content { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Estilo para botão de tipo de transação selecionado */
-        .transaction-type-btn, .theme-btn, .filter-btn, .category-btn {
+        /* Estilos para botões selecionados */
+        .transaction-type-btn, .theme-btn, .filter-btn, .category-btn, .answer-btn {
             background-color: transparent;
             transition: all 0.2s ease-in-out;
         }
-        .transaction-type-btn.selected, .theme-btn.selected, .filter-btn.selected, .category-btn.selected {
+        .transaction-type-btn.selected, .theme-btn.selected, .filter-btn.selected, .category-btn.selected, .answer-btn.selected {
             background-color: var(--cor-selecionada, var(--fundo-elemento));
             color: white;
             font-weight: bold;
@@ -67,7 +67,7 @@
             <!-- TELA DE LOGIN -->
             <div id="screen-0" class="screen w-full h-full flex flex-col items-center justify-center p-6 z-10">
                 <div class="w-full max-w-md text-center">
-                    <img src="https://castelofortegroup.com/wp-content/uploads/2025/04/logo-castelo-forte-horizontal-cor-branco-300x91.png.webp" alt="Logo Castelo Forte" class="mx-auto w-56 mb-8" onerror="this.onerror=null; this.src='https://placehold.co/300x91/002147/ffffff?text=Castelo+Forte';">
+                    <img src="https://castelofortegroup.com/wp-content/uploads/2025/04/logo-castelo-forte-horizontal-cor-branco-300x91.png.webp" alt="Logo Castelo Forte" class="mx-auto w-56 mb-8">
                     <form class="space-y-4" onsubmit="event.preventDefault();">
                         <input type="email" required class="appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm" placeholder="Email">
                         <input type="password" required class="appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm" placeholder="Senha">
@@ -92,13 +92,23 @@
                         </div>
                     </div>
                     <div class="flex items-center space-x-4">
+                        <i id="plans-btn" data-lucide="gem" class="w-6 h-6 text-[var(--cor-texto-secundario)] hover:text-[var(--cor-acento-dourado)] transition-colors cursor-pointer"></i>
                         <i id="notifications-btn" data-lucide="bell" class="w-6 h-6 text-[var(--cor-texto-secundario)] hover:text-[var(--cor-acento-dourado)] transition-colors cursor-pointer"></i>
                     </div>
                 </header>
                 <main class="flex-1 p-4 overflow-y-auto mobile-screen-content pb-24 space-y-5">
                     <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><h3 class="text-sm text-[var(--cor-texto-secundario)]">Saldo disponível</h3><p class="text-3xl font-bold text-[var(--cor-acento-dourado)] mt-1">R$ 12.450,75</p></div>
-                    <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><div class="flex justify-center items-center space-x-2"><i data-lucide="wallet" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i><i data-lucide="link" class="w-6 h-6 text-[var(--cor-texto-secundario)]"></i><i data-lucide="landmark" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div><h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Conexão Bancária</h3><p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Conecte seus bancos e importe seus lançamentos.</p><button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar agora</button></div>
+                    
                     <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl"><h3 class="text-md font-semibold text-[var(--cor-texto-principal)] mb-4">Últimos Lançamentos</h3><div class="space-y-4"><div class="flex items-center justify-between"><div class="flex items-center space-x-3"><i data-lucide="arrow-up-circle" class="w-6 h-6 text-[var(--cor-receita)]"></i><p class="text-[var(--cor-texto-principal)]">Salário</p></div><p class="font-medium text-[var(--cor-receita)]">+ R$ 5.000,00</p></div><div class="flex items-center justify-between"><div class="flex items-center space-x-3"><i data-lucide="arrow-down-circle" class="w-6 h-6 text-[var(--cor-despesa)]"></i><p class="text-[var(--cor-texto-principal)]">Aluguel</p></div><p class="font-medium text-[var(--cor-despesa)]">- R$ 1.500,00</p></div></div></div>
+                    
+                    <div id="questionnaire-card" class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center cursor-pointer hover:bg-white/10">
+                        <div class="flex justify-center items-center space-x-2"><i data-lucide="file-text" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div>
+                        <h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Descubra seu Perfil Financeiro</h3>
+                        <p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Responda algumas perguntas para entendermos melhor seus objetivos.</p>
+                        <button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar Questionário</button>
+                    </div>
+                    
+                    <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><div class="flex justify-center items-center space-x-2"><i data-lucide="wallet" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i><i data-lucide="link" class="w-6 h-6 text-[var(--cor-texto-secundario)]"></i><i data-lucide="landmark" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div><h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Conexão Bancária</h3><p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Conecte seus bancos e importe seus lançamentos.</p><button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar agora</button></div>
                 </main>
             </div>
 
@@ -295,7 +305,7 @@
                                 <div id="transaction-type-selector" class="mt-2 grid grid-cols-3 gap-2 text-sm">
                                     <button type="button" data-type="expense" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-despesa)] text-[var(--cor-despesa)]" style="--cor-selecionada: var(--cor-despesa);">Despesa</button>
                                     <button type="button" data-type="income" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-receita)] text-[var(--cor-receita)]" style="--cor-selecionada: var(--cor-receita);">Receita</button>
-                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-0 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
+                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
                                 </div>
                             </div>
                             <div id="category-selector-wrapper" class="hidden">
@@ -553,7 +563,7 @@
                                 <div id="edit-transaction-type-selector" class="mt-2 grid grid-cols-3 gap-2 text-sm">
                                     <button type="button" data-type="expense" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-despesa)] text-[var(--cor-despesa)]" style="--cor-selecionada: var(--cor-despesa);">Despesa</button>
                                     <button type="button" data-type="income" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-receita)] text-[var(--cor-receita)]" style="--cor-selecionada: var(--cor-receita);">Receita</button>
-                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-0 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
+                                    <button type="button" data-type="transfer" class="transaction-type-btn py-3 px-2 rounded-md border-2 border-[var(--cor-transferencia)] text-[var(--cor-transferencia)]" style="--cor-selecionada: var(--cor-transferencia);">Transferência</button>
                                 </div>
                             </div>
                             <div id="edit-category-selector-wrapper" class="hidden">
@@ -564,6 +574,99 @@
                         </div>
                     </form>
                  </main>
+            </div>
+            
+            <!-- TELA DO QUESTIONÁRIO -->
+            <div id="screen-14" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                   <i data-lucide="x" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(1)"></i>
+                   <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Perfil Financeiro</h1>
+                   <button id="skip-questionnaire-btn" class="font-semibold text-[var(--cor-texto-secundario)] hover:text-white transition-opacity">Pular</button>
+                </header>
+                <div class="w-full h-1 bg-[var(--fundo-card)]">
+                    <div id="progress-bar" class="h-full bg-[var(--cor-acento-dourado)] transition-all duration-300"></div>
+                </div>
+                <main class="flex-1 p-6 flex flex-col justify-between">
+                    <p id="question-text" class="text-center text-xl font-medium leading-relaxed"></p>
+                    <div id="answer-options" class="space-y-3">
+                        <!-- Botões de resposta serão inseridos aqui -->
+                    </div>
+                    <button id="next-question-btn" class="w-full py-3 text-sm font-bold rounded-md text-black bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-opacity duration-300 disabled:opacity-50" disabled>Próximo</button>
+                </main>
+            </div>
+            
+            <!-- TELA DE RESULTADO DO QUESTIONÁRIO -->
+            <div id="screen-15" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                   <i data-lucide="x" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(1)"></i>
+                   <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Resultado do Perfil</h1>
+                   <div class="w-6"></div>
+                </header>
+                <main class="flex-1 p-6 overflow-y-auto mobile-screen-content space-y-6">
+                    <div class="text-center">
+                        <i data-lucide="award" class="w-16 h-16 mx-auto text-[var(--cor-acento-dourado)]"></i>
+                        <h2 class="text-2xl font-bold mt-4">Seu Perfil é: O Guardião Prudente</h2>
+                        <p class="text-[var(--cor-texto-secundario)] mt-2">Você valoriza a segurança e a estabilidade acima de tudo.</p>
+                    </div>
+                    <div class="text-left text-sm text-[var(--cor-texto-secundario)] leading-relaxed space-y-3">
+                        <p>Seu perfil financeiro, "O Guardião Prudente", revela uma abordagem cautelosa e metódica em relação ao dinheiro. Você não se deixa levar por impulsos ou tendências passageiras, preferindo analisar cada detalhe antes de tomar uma decisão. A segurança de suas economias é sua prioridade máxima, e você se sente mais confortável com investimentos de baixo risco, mesmo que isso signifique um retorno mais modesto.</p>
+                        <p>Essa prudência é uma grande força, pois te protege de perdas significativas e garante uma base financeira sólida. No entanto, é importante equilibrar essa cautela com oportunidades de crescimento para que seu patrimônio não perca valor para a inflação ao longo do tempo. Explorar opções de investimento com um pouco mais de risco, mas ainda alinhadas ao seu perfil, pode ser um próximo passo interessante.</p>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-[var(--cor-borda)]">
+                        <h3 class="text-xl font-bold text-center mb-4">Evolua sua jornada financeira</h3>
+                        <button class="w-full py-3 text-sm font-bold rounded-md text-black bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)]" onclick="showScreen(16)">Ver Nossos Planos</button>
+                    </div>
+                    <footer class="p-6">
+                        <button class="w-full py-3 text-sm font-bold rounded-md text-[var(--cor-texto-secundario)] hover:text-white" onclick="showScreen(1)">Voltar ao Dashboard</button>
+                    </footer>
+                </main>
+            </div>
+            
+             <!-- TELA DE PLANOS -->
+            <div id="screen-16" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                   <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(1)"></i>
+                   <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Nossos Planos</h1>
+                   <div class="w-6"></div>
+                </header>
+                <main class="flex-1 p-6 overflow-y-auto mobile-screen-content space-y-6">
+                    <div class="space-y-4">
+                        <!-- Plano 1 -->
+                        <div class="bg-[var(--fundo-elemento)] p-4 rounded-lg border-2 border-transparent hover:border-[var(--cor-acento-dourado)] transition-colors">
+                            <h4 class="font-bold text-lg">Plano Essencial</h4>
+                            <p class="text-2xl font-bold my-2">R$ 19,90<span class="text-sm font-normal text-[var(--cor-texto-secundario)]">/mês</span></p>
+                            <ul class="text-sm space-y-1 text-[var(--cor-texto-secundario)] mb-4">
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Controle de gastos completo</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Criação de metas</li>
+                            </ul>
+                            <button class="w-full py-2 text-sm font-bold rounded-md bg-[var(--fundo-principal)] hover:bg-opacity-80">Selecionar</button>
+                        </div>
+                        <!-- Plano 2 -->
+                        <div class="bg-[var(--fundo-elemento)] p-4 rounded-lg border-2 border-[var(--cor-acento-dourado)] relative">
+                             <span class="absolute top-0 right-4 -mt-3 bg-[var(--cor-acento-dourado)] text-black text-xs font-bold px-2 py-1 rounded-full">MAIS POPULAR</span>
+                            <h4 class="font-bold text-lg">Plano Premium</h4>
+                            <p class="text-2xl font-bold my-2">R$ 39,90<span class="text-sm font-normal text-[var(--cor-texto-secundario)]">/mês</span></p>
+                            <ul class="text-sm space-y-1 text-[var(--cor-texto-secundario)] mb-4">
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Tudo do Plano Essencial</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Relatórios detalhados</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Consultoria com especialista</li>
+                            </ul>
+                            <button class="w-full py-2 text-sm font-bold rounded-md text-black bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)]">Selecionar</button>
+                        </div>
+                         <!-- Plano 3 -->
+                        <div class="bg-[var(--fundo-elemento)] p-4 rounded-lg border-2 border-transparent hover:border-[var(--cor-acento-dourado)] transition-colors">
+                            <h4 class="font-bold text-lg">Plano Castelo Forte</h4>
+                            <p class="text-2xl font-bold my-2">R$ 59,90<span class="text-sm font-normal text-[var(--cor-texto-secundario)]">/mês</span></p>
+                            <ul class="text-sm space-y-1 text-[var(--cor-texto-secundario)] mb-4">
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Tudo do Plano Premium</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Acesso a carteiras recomendadas</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-[var(--cor-receita)]"></i>Gerente de conta pessoal</li>
+                            </ul>
+                            <button class="w-full py-2 text-sm font-bold rounded-md bg-[var(--fundo-principal)] hover:bg-opacity-80">Selecionar</button>
+                        </div>
+                    </div>
+                </main>
             </div>
 
 
@@ -584,12 +687,13 @@
                 <div class="relative flex justify-around items-center h-full">
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="1"><i data-lucide="layout-dashboard" class="w-6 h-6"></i><span class="text-[10px] mt-1">Dashboard</span></a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i><span class="text-[10px] mt-1">Lançamentos</span></a>
-                    <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="2"><i data-lucide="arrow-right-left" class="w-6 h-6"></i></a>
-                    <a href="#" class="nav-link" data-screen="5">
-                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[56%] -translate-y-1 bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
-                           <i data-lucide="plus" class="w-6 h-6"></i>
-                       </div>
-                    </a>
+                    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <a href="#" class="nav-link" data-screen="5">
+                            <div class="bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
+                               <i data-lucide="plus" class="w-6 h-6"></i>
+                           </div>
+                        </a>
+                    </div>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="3"><i data-lucide="pie-chart" class="w-6 h-6"></i><span class="text-[10px] mt-1">Relatórios</span></a>
                     <a href="#" class="nav-link flex flex-col items-center justify-center h-full text-[var(--cor-texto-secundario)] w-1/5" data-screen="8"><i data-lucide="target" class="w-6 h-6"></i><span class="text-[10px] mt-1">Metas</span></a>
                 </div>
@@ -683,7 +787,7 @@
                 nextBtnContainer.classList.remove('hidden');
 
                 // Esconde a barra de navegação inferior em telas específicas
-                if ([0, 6, 7, 9, 10, 11, 12, 13].includes(index)) { 
+                if ([0, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16].includes(index)) { 
                     nav.classList.add('hidden');
                 } else {
                     nav.classList.remove('hidden');
@@ -843,6 +947,7 @@
         document.querySelector('#screen-0 form button').addEventListener('click', () => showScreen(1));
         document.getElementById('profile-pic').addEventListener('click', () => showScreen(7));
         document.getElementById('notifications-btn').addEventListener('click', () => showScreen(9));
+        document.getElementById('plans-btn').addEventListener('click', () => showScreen(15));
         document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', () => showScreen(2)));
         document.querySelectorAll('.transaction-item').forEach(item => item.addEventListener('click', () => showTransactionDetail(item)));
         
@@ -1019,6 +1124,116 @@
                 }
             });
         }
+        
+        // --- LÓGICA DO QUESTIONÁRIO ---
+        const questions = [
+            "Sinto uma apreensão significativa quando preciso tomar decisões importantes sobre dinheiro.",
+            "Confio mais na minha própria análise detalhada do que na opinião geral do mercado ou de especialistas.",
+            "A segurança e a preservação do meu dinheiro são mais importantes do que a chance de obter grandes lucros.",
+            "Considero as experiências e recomendações de pessoas próximas ao fazer escolhas financeiras.",
+            "Busco um equilíbrio claro entre gastar hoje e guardar para o futuro em minhas finanças.",
+            "Prefiro manter meu dinheiro em aplicações muito seguras, mesmo que rendam abaixo da inflação.",
+            "Prefiro seguir recomendações de consultores financeiros do que fazer minha própria pesquisa aprofundada.",
+            "Tomo decisões financeiras importantes rapidamente, confiando na minha intuição ou visão.",
+            "Quando vejo algo que me agrada, costumo comprá-lo no momento, mesmo sem ter planejado.",
+            "Sinto-me confortável com minha estratégia financeira atual e não vejo necessidade de mudanças drásticas.",
+            "Sinto-me tranquilo(a) e confiante sobre minha situação financeira futura.",
+            "Gasto tempo entendendo a fundo como funcionam os produtos financeiros ou os bens que compro.",
+            "Estou sempre atento(a) a oportunidades de alto crescimento, mesmo que envolvam riscos maiores.",
+            "Minhas decisões de compra são baseadas principalmente em necessidade e valor, independente da opinião de outros.",
+            "É difícil para mim manter um orçamento ou um plano financeiro consistente.",
+            "Mesmo quando tenho dinheiro guardado, a ideia de uma despesa inesperada me causa muita ansiedade.",
+            "Minhas decisões de investimento são baseadas primariamente em dados, fatos e lógica.",
+            "A possibilidade de um ganho financeiro expressivo me motiva mais do que o medo de perder.",
+            "Sinto satisfação em compartilhar boas experiências de compra ou conquistas financeiras com pessoas próximas.",
+            "Reviso minhas finanças periodicamente, mas sem obsessão, apenas para garantir que estou no caminho certo.",
+            "Tenho dificuldade em gastar dinheiro comigo mesmo(a) em coisas que não sejam estritamente necessárias.",
+            "Prefiro estudar detalhadamente os riscos antes de tomar decisões financeiras importantes.",
+            "Se eu tiver uma forte convicção sobre um investimento, estou disposto(a) a concentrar uma parte significativa do meu dinheiro nele.",
+            "Sinto uma satisfação especial ao comprar algo que está sendo muito comentado ou desejado por outros.",
+            "Busco equilibrar segurança e crescimento em minhas decisões financeiras.",
+            "Esta pergunta é para verificar sua atenção. Por favor, marque \"Concordo Parcialmente\".",
+            "Respondo a questionários sempre com total honestidade, mesmo quando as perguntas são pessoais.",
+            "Vejo meus recursos financeiros como dádivas de Deus que devo administrar com sabedoria.",
+            "Busco orientação em princípios bíblicos antes de tomar decisões financeiras importantes.",
+            "Acredito que sou responsável perante Deus pela forma como uso meu dinheiro.",
+            "Considero que meu dinheiro é exclusivamente meu e posso usá-lo como quiser.",
+            "Procuro equilibrar minhas necessidades pessoais com oportunidades de ajudar outros.",
+            "Sinto gratidão pelo que tenho, independente de ter mais ou menos que outros.",
+            "Encontro satisfação em coisas simples, sem precisar de bens materiais para ser feliz.",
+            "Sinto que preciso de mais dinheiro para ser verdadeiramente feliz.",
+            "Consigo distinguir entre desejos e necessidades reais em minhas finanças.",
+            "Mantenho paz interior mesmo quando não posso comprar tudo que gostaria.",
+            "Encontro alegria genuína em ajudar outros financeiramente quando possível.",
+            "Considero doações e ajuda ao próximo como parte essencial do meu planejamento financeiro.",
+            "Prefiro dar de forma discreta, sem buscar reconhecimento público.",
+            "Acredito que devo cuidar primeiro de todas as minhas necessidades antes de ajudar outros.",
+            "Vejo oportunidades de generosidade como bênçãos, não como sacrifícios."
+        ];
+        
+        const answers = ["Discordo Totalmente", "Discordo Parcialmente", "Neutro/Indeciso", "Concordo Parcialmente", "Concordo Totalmente"];
+        let currentQuestionIndex = 0;
+
+        function loadQuestion(index) {
+            const questionText = document.getElementById('question-text');
+            const answerOptions = document.getElementById('answer-options');
+            const progressBar = document.getElementById('progress-bar');
+            const questionCounter = document.getElementById('question-counter');
+            const nextBtn = document.getElementById('next-question-btn');
+
+            questionText.innerText = questions[index];
+            answerOptions.innerHTML = '';
+            
+            answers.forEach((answer, i) => {
+                const button = document.createElement('button');
+                button.innerText = answer;
+                button.className = 'answer-btn w-full py-3 text-sm font-medium rounded-md border-2 border-[var(--cor-borda)] hover:bg-[var(--fundo-card)]';
+                button.dataset.value = i + 1;
+                button.addEventListener('click', () => {
+                    answerOptions.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('selected');
+                        btn.style.backgroundColor = 'transparent';
+                        btn.style.color = '';
+                        btn.style.borderColor = getCssVar('--cor-borda');
+                    });
+                    button.classList.add('selected');
+                    button.style.backgroundColor = getCssVar('--cor-acento-dourado');
+                    button.style.color = 'black';
+                    button.style.borderColor = getCssVar('--cor-acento-dourado');
+                    nextBtn.disabled = false;
+                });
+                answerOptions.appendChild(button);
+            });
+
+            progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+            questionCounter.innerText = `${index + 1}/${questions.length}`;
+            nextBtn.disabled = true;
+
+            if (index === questions.length - 1) {
+                nextBtn.innerText = 'Finalizar';
+            } else {
+                nextBtn.innerText = 'Próximo';
+            }
+        }
+
+        document.getElementById('questionnaire-card').addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            showScreen(14);
+            loadQuestion(currentQuestionIndex);
+        });
+
+        document.getElementById('next-question-btn').addEventListener('click', () => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion(currentQuestionIndex);
+            } else {
+                // Finaliza o questionário
+                showScreen(15);
+            }
+        });
+
+        document.getElementById('skip-questionnaire-btn').addEventListener('click', () => showScreen(15));
+
 
         window.onload = () => {
             showScreen(0);
