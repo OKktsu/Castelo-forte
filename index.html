@@ -76,12 +76,12 @@
             
             <!-- Hidden template for all transactions -->
             <div id="all-transactions-template" class="hidden">
-                 <div class="transaction-item" data-source-type="account" data-type="expense" data-title="Supermercado" data-category="Alimentação" data-value="- R$ 650,20" data-date="03 de Julho, 2025" data-account="Conta Corrente" data-status="pago" data-description="Compra mensal de supermercado."></div>
-                 <div class="transaction-item" data-source-type="account" data-type="transfer" data-title="Transferência" data-category="Transferência" data-value="- R$ 500,00" data-date="03 de Julho, 2025" data-account="Conta Poupança" data-status="pago" data-description="Transferência para cobrir despesas na conta corrente."></div>
-                 <div class="transaction-item" data-source-type="account" data-type="income" data-title="Salário Empresa X" data-category="Salário" data-value="+ R$ 5.000,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pago" data-description="Recebimento do salário mensal."></div>
-                 <div class="transaction-item" data-source-type="account" data-type="expense" data-title="Aluguel" data-category="Moradia" data-value="- R$ 1.500,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pendente" data-description="Pagamento do aluguel do apartamento."></div>
-                 <div class="transaction-item" data-source-type="card" data-type="expense" data-title="iFood" data-category="Alimentação" data-value="- R$ 54,30" data-date="01 de Julho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Pedido de almoço."></div>
-                 <div class="transaction-item" data-source-type="card" data-type="expense" data-title="Netflix" data-category="Lazer" data-value="- R$ 39,90" data-date="30 de Junho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Mensalidade Netflix."></div>
+                <div class="transaction-item" data-source-type="account" data-type="expense" data-title="Supermercado" data-category="Alimentação" data-value="- R$ 650,20" data-date="03 de Julho, 2025" data-account="Conta Corrente" data-status="pago" data-description="Compra mensal de supermercado."></div>
+                <div class="transaction-item" data-source-type="account" data-type="transfer" data-title="Transferência" data-category="Transferência" data-value="- R$ 500,00" data-date="03 de Julho, 2025" data-account="Conta Poupança" data-status="pago" data-description="Transferência para cobrir despesas na conta corrente."></div>
+                <div class="transaction-item" data-source-type="account" data-type="income" data-title="Salário Empresa X" data-category="Salário" data-value="+ R$ 5.000,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pago" data-description="Recebimento do salário mensal."></div>
+                <div class="transaction-item" data-source-type="account" data-type="expense" data-title="Aluguel" data-category="Moradia" data-value="- R$ 1.500,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pendente" data-description="Pagamento do aluguel do apartamento."></div>
+                <div class="transaction-item" data-source-type="card" data-type="expense" data-title="iFood" data-category="Alimentação" data-value="- R$ 54,30" data-date="01 de Julho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Pedido de almoço."></div>
+                <div class="transaction-item" data-source-type="card" data-type="expense" data-title="Netflix" data-category="Lazer" data-value="- R$ 39,90" data-date="30 de Junho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Mensalidade Netflix."></div>
             </div>
 
             <div id="screen-0" class="screen w-full h-full flex flex-col items-center justify-center p-6 z-10">
@@ -125,8 +125,8 @@
                     
                     <div>
                         <div class="flex justify-between items-center mb-3 px-1">
-                             <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Contas</h3>
-                             <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80">Ver todas</a>
+                            <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Contas</h3>
+                            <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80" onclick="showScreen(23)">Ver todas</a>
                         </div>
                         <div id="accounts-carousel" class="card-carousel">
                             <!-- Populated by JS -->
@@ -135,8 +135,8 @@
 
                     <div>
                         <div class="flex justify-between items-center mb-3 px-1">
-                             <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Meus Cartões</h3>
-                             <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80">Ver todos</a>
+                            <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Meus Cartões</h3>
+                            <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80" onclick="showScreen(24)">Ver todos</a>
                         </div>
                         <div id="cards-carousel" class="card-carousel">
                             <!-- Populated by JS -->
@@ -145,8 +145,8 @@
                     
                     <div>
                         <div class="flex justify-between items-center mb-3 px-1">
-                             <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Últimos Lançamentos</h3>
-                             <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80" onclick="showScreen(2)">Ver todos</a>
+                            <h3 class="text-md font-semibold text-[var(--cor-texto-principal)]">Últimos Lançamentos</h3>
+                            <a href="#" class="text-sm font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80" onclick="showScreen(2)">Ver todos</a>
                         </div>
                         <div id="recent-transactions-carousel" class="card-carousel">
                            <!-- Populated by JS -->
@@ -158,11 +158,19 @@
                         <div class="h-40"><canvas id="dashboard-pie-chart"></canvas></div>
                     </div>
 
+                    <div id="questionnaire-card" class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center cursor-pointer hover:bg-white/10">
+                        <div class="flex justify-center items-center space-x-2"><i data-lucide="file-text" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div>
+                        <h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Descubra seu Perfil Financeiro</h3>
+                        <p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Responda algumas perguntas para entendermos melhor seus objetivos.</p>
+                        <button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar Questionário</button>
+                    </div>
+                    
+                    <div class="bg-[var(--fundo-elemento)] p-5 rounded-xl text-center"><div class="flex justify-center items-center space-x-2"><i data-lucide="wallet" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i><i data-lucide="link" class="w-6 h-6 text-[var(--cor-texto-secundario)]"></i><i data-lucide="landmark" class="w-8 h-8 text-[var(--cor-acento-dourado)]"></i></div><h3 class="text-lg font-bold text-[var(--cor-texto-principal)] mt-4">Conexão Bancária</h3><p class="text-sm text-[var(--cor-texto-secundario)] mt-2">Conecte seus bancos e importe seus lançamentos.</p><button class="w-full mt-4 py-3 px-4 text-sm font-bold rounded-md text-[var(--fundo-principal)] bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Começar agora</button></div>
                 </main>
             </div>
 
             <div id="screen-2" class="screen hidden w-full h-full flex flex-col">
-                 <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
                     <h1 class="text-xl font-bold text-[var(--cor-texto-principal)]">Lançamentos</h1>
                     <button id="open-filter-btn" class="p-2 rounded-full hover:bg-white/10 transition-colors">
                         <i data-lucide="filter" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>
@@ -262,10 +270,10 @@
                     </div>
                 </header>
                 <main class="flex-1 overflow-y-auto mobile-screen-content pb-24 relative">
-                     <div class="p-4">
+                    <div class="p-4">
                         <div class="flex justify-between items-center text-center">
                             <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer prev-month-btn"></i>
-                             <div class="flex-1 flex flex-col items-center">
+                            <div class="flex-1 flex flex-col items-center">
                                 <span class="text-xs text-[var(--cor-texto-secundario)] year-display"></span>
                                 <div class="flex justify-center items-center space-x-2 mt-1">
                                     <span class="text-[var(--cor-texto-secundario)] prev-month-text"></span>
@@ -311,7 +319,7 @@
                             </div>
                         </div>
                     </div>
-                     <button id="add-goal-transaction-btn" class="absolute bottom-6 right-4 bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
+                    <button id="add-goal-transaction-btn" class="absolute bottom-6 right-4 bg-[var(--cor-acento-dourado)] text-[var(--fundo-principal)] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[var(--cor-acento-dourado-hover)] transition-colors">
                         <i data-lucide="plus" class="w-8 h-8"></i>
                     </button>
                 </main>
@@ -435,7 +443,7 @@
                         </div>
                     </div>
                 </main>
-                 <footer class="absolute bottom-0 left-0 right-0 p-4">
+                <footer class="absolute bottom-0 left-0 right-0 p-4">
                     <div class="flex space-x-4">
                         <button id="edit-transaction-btn" class="w-full py-3 text-sm font-bold rounded-md text-[var(--cor-texto-principal)] bg-[var(--fundo-elemento)] hover:opacity-80">Editar</button>
                         <button id="delete-transaction-btn" class="w-full py-3 text-sm font-bold rounded-md text-white bg-[var(--cor-despesa)] hover:opacity-80">Excluir</button>
@@ -894,7 +902,7 @@
                         </div>
                     </div>
                 </main>
-                 <footer class="p-4">
+                <footer class="p-4">
                     <button id="apply-filters-btn" class="w-full py-3 text-sm font-bold rounded-md text-black bg-[var(--cor-acento-dourado)] hover:bg-[var(--cor-acento-dourado-hover)] transition-colors duration-300">Aplicar Filtros</button>
                 </footer>
             </div>
@@ -907,6 +915,60 @@
                 </header>
                 <main id="goal-list-container" class="flex-1 p-4 overflow-y-auto mobile-screen-content space-y-2"></main>
             </div>
+
+            <!-- NEW SCREEN: All Accounts -->
+            <div id="screen-23" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(1)"></i>
+                    <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Minhas Contas</h1>
+                    <i data-lucide="plus-circle" class="w-6 h-6 text-[var(--cor-acento-dourado)] cursor-pointer" onclick="showScreen(25)"></i>
+                </header>
+                <main class="flex-1 p-4 overflow-y-auto mobile-screen-content space-y-4">
+                    <div id="all-accounts-list" class="space-y-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </main>
+            </div>
+
+            <!-- NEW SCREEN: All Cards -->
+            <div id="screen-24" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(1)"></i>
+                    <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Meus Cartões</h1>
+                    <i data-lucide="plus-circle" class="w-6 h-6 text-[var(--cor-acento-dourado)] cursor-pointer" onclick="showScreen(18)"></i>
+                </header>
+                <main class="flex-1 p-4 overflow-y-auto mobile-screen-content space-y-4">
+                    <div id="all-cards-list" class="space-y-4">
+                        <!-- Populated by JS -->
+                    </div>
+                </main>
+            </div>
+
+            <!-- NEW SCREEN: Add Account -->
+            <div id="screen-25" class="screen hidden w-full h-full flex flex-col">
+                <header class="flex items-center justify-between h-16 px-4 shrink-0 border-b border-[var(--cor-borda)]">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-[var(--cor-texto-secundario)] cursor-pointer" onclick="showScreen(23)"></i>
+                    <h1 class="text-lg font-semibold text-[var(--cor-texto-principal)]">Adicionar Conta</h1>
+                    <button class="font-semibold text-[var(--cor-acento-dourado)] hover:opacity-80 transition-opacity" onclick="showScreen(23)">Salvar</button>
+                </header>
+                <main class="flex-1 p-4 overflow-y-auto mobile-screen-content space-y-6">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="account-bank" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Instituição Financeira</label>
+                            <input type="text" id="account-bank" class="mt-1 appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md" placeholder="Ex: Banco do Brasil">
+                        </div>
+                        <div>
+                            <label for="account-nickname" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Apelido da Conta</label>
+                            <input type="text" id="account-nickname" class="mt-1 appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md" placeholder="Ex: Conta Salário">
+                        </div>
+                        <div>
+                            <label for="account-balance" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Saldo Inicial</label>
+                            <input type="text" id="account-balance" class="mt-1 appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md" placeholder="R$ 0,00">
+                        </div>
+                    </form>
+                </main>
+            </div>
+
 
             <div id="confirmation-modal" class="hidden absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
                 <div class="bg-[var(--fundo-card)] p-6 rounded-xl shadow-lg w-full max-w-xs text-center">
@@ -944,944 +1006,993 @@
     </div>
 
     <script>
-        lucide.createIcons();
-
-        let currentScreenIndex = 0;
-        const navLinks = document.querySelectorAll('.nav-link');
-        let barChartInstance, pieChartInstance, dashboardPieChartInstance;
-        const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-        let currentDate = new Date(2025, 6, 1);
-        let activeTransactionView = 'todos'; // 'contas', 'cartoes', 'todos'
-        
-        const goals = [
-            { name: 'Bares e Restaurantes', icon: 'utensils' },
-            { name: 'Viagem de Férias', icon: 'plane' }
-        ];
-
-        const expenseCategoriesWithIcons = [
-            { name: 'Metas', icon: 'target' },
-            { name: 'Moradia', icon: 'home' }, 
-            { name: 'Alimentação', icon: 'shopping-cart' },
-            { name: 'Transporte', icon: 'car' }, 
-            { name: 'Lazer', icon: 'gamepad-2' },
-            { name: 'Saúde', icon: 'heart-pulse' }, 
-            { name: 'Educação', icon: 'book-open' },
-            { name: 'Outras Despesas', icon: 'tag' }
-        ];
-        const incomeCategoriesWithIcons = [
-            { name: 'Salário', icon: 'briefcase' }, 
-            { name: 'Vendas', icon: 'dollar-sign' },
-            { name: 'Investimentos', icon: 'trending-up' }, 
-            { name: 'Outras Receitas', icon: 'gift' }
-        ];
-        const accountsAndCards = [
-            { name: 'Conta Corrente', type: 'account', icon: 'landmark', bank: 'Nubank', balance: 'R$ 8.540,20' },
-            { name: 'Conta Poupança', type: 'account', icon: 'piggy-bank', bank: 'Banco do Brasil', balance: 'R$ 3.910,55' },
-            { name: 'Castelo Bank Final 1234', type: 'card', icon: 'credit-card', flag: 'mastercard' },
-            { name: 'Outro Cartão Final 5678', type: 'card', icon: 'credit-card', flag: 'visa' }
-        ];
-        let currentTransactionToEdit = null;
-
-        const sampleBills = [
-            { month: 5, year: 2025, value: 1250.50, status: 'PAGA', statusColor: 'text-green-400', valueColor: '--cor-texto-secundario', actionText: 'Comprovante' },
-            { month: 6, year: 2025, value: 854.30, status: 'FECHADA', statusColor: 'text-[var(--cor-acento-dourado)]', valueColor: '--cor-acento-dourado', actionText: 'Pagar Fatura' },
-            { month: 7, year: 2025, value: 150.25, status: 'ABERTA', statusColor: 'text-sky-400', valueColor: '--cor-texto-principal', actionText: 'Ver Parcial' },
-            { month: 8, year: 2025, value: 0.00, status: 'FUTURA', statusColor: 'text-gray-500', valueColor: '--cor-texto-principal', actionText: '' }
-        ];
-        let currentBillIndex = 1;
-
-        const getCssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-
-        function updateNav(activeIndex) {
-            navLinks.forEach(link => {
-                const screen = link.getAttribute('data-screen');
-                if (!screen) return; // Skip the central add button
-                const icon = link.querySelector('i');
-                const text = link.querySelector('span');
-                const isActive = screen == activeIndex;
-                
-                link.style.color = isActive ? getCssVar('--cor-acento-dourado') : getCssVar('--cor-texto-secundario');
-                if(text) text.classList.toggle('font-semibold', isActive);
-            });
-        }
-
-        function updateAllMonthDisplays() {
-            const displayMonth = months[currentDate.getMonth()];
-            const displayYear = currentDate.getFullYear();
-            const prevMonth = months[(currentDate.getMonth() - 1 + 12) % 12];
-            const nextMonth = months[(currentDate.getMonth() + 1) % 12];
-
-            document.querySelectorAll('.year-display').forEach(el => el.innerText = displayYear);
-            document.querySelectorAll('.month-display').forEach(el => el.innerText = displayMonth);
-            document.querySelectorAll('.prev-month-text').forEach(el => el.innerText = prevMonth);
-            document.querySelectorAll('.next-month-text').forEach(el => el.innerText = nextMonth);
-        }
-
-        function updateBillDisplay() {
-            const billData = sampleBills[currentBillIndex];
-            const monthName = months[billData.month];
-            document.getElementById('bill-month-year').innerText = `${monthName} ${billData.year}`;
-            document.getElementById('bill-status').innerText = `FATURA ${billData.status}`;
-            document.getElementById('bill-status').className = `text-xs font-semibold ${billData.statusColor}`;
-            document.getElementById('bill-value').innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(billData.value);
-            document.getElementById('bill-value').style.color = getCssVar(billData.valueColor);
-            const actionBtn = document.getElementById('bill-action-btn');
-            actionBtn.innerText = billData.actionText;
-            actionBtn.style.display = billData.actionText ? 'block' : 'none';
-            document.getElementById('prev-bill-btn').style.visibility = currentBillIndex > 0 ? 'visible' : 'hidden';
-            document.getElementById('next-bill-btn').style.visibility = currentBillIndex < sampleBills.length - 1 ? 'visible' : 'hidden';
-        }
-
-        function populateList(containerId, items, onSelect) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = '';
-            items.forEach(item => {
-                const itemEl = document.createElement('a');
-                itemEl.href = '#';
-                itemEl.className = 'flex items-center p-4 bg-[var(--fundo-elemento)] rounded-lg hover:bg-white/10';
-                itemEl.innerHTML = `
-                    <i data-lucide="${item.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-4"></i>
-                    <span>${item.name}</span>
-                `;
-                itemEl.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    onSelect(item);
-                });
-                container.appendChild(itemEl);
-            });
+        document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
-        }
 
-        function showScreen(index, params = {}) {
-            document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
-            const currentScreenEl = document.getElementById(`screen-${index}`);
-            if(currentScreenEl) {
-                currentScreenEl.classList.remove('hidden');
-                currentScreenIndex = index;
-                const nav = document.querySelector('nav');
-                const screensWithoutNav = [0, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22];
-                nav.classList.toggle('hidden', screensWithoutNav.includes(index));
-                if ([1,2,3,8].includes(index)) { updateNav(index); }
-                if (index === 1) { setupDashboard(); }
-                if (index === 2) { renderTransactions(); }
-                if (index === 3) { createOrUpdateCharts(); }
-                if (index === 5) { setupTransactionForm('new', params.defaults); }
-                if (index === 17) { updateBillDisplay(); }
-                if (index === 19) {
-                    const type = params.transactionType || 'expense';
-                    const categories = type === 'income' ? incomeCategoriesWithIcons : expenseCategoriesWithIcons;
-                    populateList('category-list-container', categories, (selectedCategory) => {
-                        const selector = document.getElementById('new-category-selector');
-                        if (selector) {
-                            selector.innerHTML = `<i data-lucide="${selectedCategory.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedCategory.name}</span>`;
+            let currentScreenIndex = 0;
+            const navLinks = document.querySelectorAll('.nav-link');
+            let barChartInstance, pieChartInstance, dashboardPieChartInstance;
+            const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            let currentDate = new Date(2025, 6, 1);
+            let activeTransactionView = 'todos'; // 'contas', 'cartoes', 'todos'
+            
+            const goals = [
+                { name: 'Bares e Restaurantes', icon: 'utensils' },
+                { name: 'Viagem de Férias', icon: 'plane' }
+            ];
+
+            const expenseCategoriesWithIcons = [
+                { name: 'Metas', icon: 'target' },
+                { name: 'Moradia', icon: 'home' }, 
+                { name: 'Alimentação', icon: 'shopping-cart' },
+                { name: 'Transporte', icon: 'car' }, 
+                { name: 'Lazer', icon: 'gamepad-2' },
+                { name: 'Saúde', icon: 'heart-pulse' }, 
+                { name: 'Educação', icon: 'book-open' },
+                { name: 'Outras Despesas', icon: 'tag' }
+            ];
+            const incomeCategoriesWithIcons = [
+                { name: 'Salário', icon: 'briefcase' }, 
+                { name: 'Vendas', icon: 'dollar-sign' },
+                { name: 'Investimentos', icon: 'trending-up' }, 
+                { name: 'Outras Receitas', icon: 'gift' }
+            ];
+            const accountsAndCards = [
+                { name: 'Conta Corrente', type: 'account', icon: 'landmark', bank: 'Nubank', balance: 'R$ 8.540,20' },
+                { name: 'Conta Poupança', type: 'account', icon: 'piggy-bank', bank: 'Banco do Brasil', balance: 'R$ 3.910,55' },
+                { name: 'Castelo Bank Final 1234', type: 'card', icon: 'credit-card', flag: 'mastercard' },
+                { name: 'Outro Cartão Final 5678', type: 'card', icon: 'credit-card', flag: 'visa' }
+            ];
+            let currentTransactionToEdit = null;
+
+            const sampleBills = [
+                { month: 5, year: 2025, value: 1250.50, status: 'PAGA', statusColor: 'text-green-400', valueColor: '--cor-texto-secundario', actionText: 'Comprovante' },
+                { month: 6, year: 2025, value: 854.30, status: 'FECHADA', statusColor: 'text-[var(--cor-acento-dourado)]', valueColor: '--cor-acento-dourado', actionText: 'Pagar Fatura' },
+                { month: 7, year: 2025, value: 150.25, status: 'ABERTA', statusColor: 'text-sky-400', valueColor: '--cor-texto-principal', actionText: 'Ver Parcial' },
+                { month: 8, year: 2025, value: 0.00, status: 'FUTURA', statusColor: 'text-gray-500', valueColor: '--cor-texto-principal', actionText: '' }
+            ];
+            let currentBillIndex = 1;
+
+            const getCssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+            function updateNav(activeIndex) {
+                navLinks.forEach(link => {
+                    const screen = link.getAttribute('data-screen');
+                    if (!screen) return; // Skip the central add button
+                    const icon = link.querySelector('i');
+                    const text = link.querySelector('span');
+                    const isActive = screen == activeIndex;
+                    
+                    link.style.color = isActive ? getCssVar('--cor-acento-dourado') : getCssVar('--cor-texto-secundario');
+                    if(text) text.classList.toggle('font-semibold', isActive);
+                });
+            }
+
+            function updateAllMonthDisplays() {
+                const displayMonth = months[currentDate.getMonth()];
+                const displayYear = currentDate.getFullYear();
+                const prevMonth = months[(currentDate.getMonth() - 1 + 12) % 12];
+                const nextMonth = months[(currentDate.getMonth() + 1) % 12];
+
+                document.querySelectorAll('.year-display').forEach(el => el.innerText = displayYear);
+                document.querySelectorAll('.month-display').forEach(el => el.innerText = displayMonth);
+                document.querySelectorAll('.prev-month-text').forEach(el => el.innerText = prevMonth);
+                document.querySelectorAll('.next-month-text').forEach(el => el.innerText = nextMonth);
+            }
+
+            function updateBillDisplay() {
+                const billData = sampleBills[currentBillIndex];
+                const monthName = months[billData.month];
+                document.getElementById('bill-month-year').innerText = `${monthName} ${billData.year}`;
+                document.getElementById('bill-status').innerText = `FATURA ${billData.status}`;
+                document.getElementById('bill-status').className = `text-xs font-semibold ${billData.statusColor}`;
+                document.getElementById('bill-value').innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(billData.value);
+                document.getElementById('bill-value').style.color = getCssVar(billData.valueColor);
+                const actionBtn = document.getElementById('bill-action-btn');
+                actionBtn.innerText = billData.actionText;
+                actionBtn.style.display = billData.actionText ? 'block' : 'none';
+                document.getElementById('prev-bill-btn').style.visibility = currentBillIndex > 0 ? 'visible' : 'hidden';
+                document.getElementById('next-bill-btn').style.visibility = currentBillIndex < sampleBills.length - 1 ? 'visible' : 'hidden';
+            }
+
+            function populateList(containerId, items, onSelect) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                container.innerHTML = '';
+                items.forEach(item => {
+                    const itemEl = document.createElement('a');
+                    itemEl.href = '#';
+                    itemEl.className = 'flex items-center p-4 bg-[var(--fundo-elemento)] rounded-lg hover:bg-white/10';
+                    itemEl.innerHTML = `
+                        <i data-lucide="${item.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-4"></i>
+                        <span>${item.name}</span>
+                    `;
+                    itemEl.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        onSelect(item);
+                    });
+                    container.appendChild(itemEl);
+                });
+                lucide.createIcons();
+            }
+
+            window.showScreen = (index, params = {}) => {
+                document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+                const currentScreenEl = document.getElementById(`screen-${index}`);
+                if(currentScreenEl) {
+                    currentScreenEl.classList.remove('hidden');
+                    currentScreenIndex = index;
+                    const nav = document.querySelector('nav');
+                    const screensWithoutNav = [0, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+                    nav.classList.toggle('hidden', screensWithoutNav.includes(index));
+                    if ([1,2,3,8].includes(index)) { updateNav(index); }
+                    if (index === 1) { setupDashboard(); }
+                    if (index === 2) { renderTransactions(); }
+                    if (index === 3) { createOrUpdateCharts(); }
+                    if (index === 5) { setupTransactionForm('new', params.defaults); }
+                    if (index === 17) { updateBillDisplay(); }
+                    if (index === 19) {
+                        const type = params.transactionType || 'expense';
+                        const categories = type === 'income' ? incomeCategoriesWithIcons : expenseCategoriesWithIcons;
+                        populateList('category-list-container', categories, (selectedCategory) => {
+                            const selector = document.getElementById('new-category-selector');
+                            if (selector) {
+                                selector.innerHTML = `<i data-lucide="${selectedCategory.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedCategory.name}</span>`;
+                            }
+                            const goalSection = document.getElementById('new-goal-selection-section');
+                            if (goalSection) {
+                                goalSection.classList.toggle('hidden', selectedCategory.name !== 'Metas');
+                            }
+                            lucide.createIcons();
+                            showScreen(5, { defaults: params.defaults });
+                        });
+                    }
+                    if (index === 20) {
+                        populateList('account-list-container', accountsAndCards, (selectedAccount) => {
+                            const selector = document.getElementById('new-account-selector');
+                            const label = document.getElementById('new-account-label');
+                            if(selector && label) {
+                                selector.innerHTML = `<i data-lucide="${selectedAccount.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedAccount.name}</span>`;
+                                label.innerText = selectedAccount.type === 'card' ? 'Cartão' : 'Conta';
+                                lucide.createIcons();
+                            }
+                            showScreen(5);
+                        });
+                    }
+                    if (index === 21) {
+                        setupFilterScreen();
+                    }
+                    if (index === 22) {
+                        populateList('goal-list-container', goals, (selectedGoal) => {
+                            const selector = document.getElementById('new-goal-selector');
+                            if(selector) {
+                                selector.innerHTML = `<i data-lucide="${selectedGoal.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedGoal.name}</span>`;
+                                lucide.createIcons();
+                            }
+                            showScreen(5);
+                        });
+                    }
+                    if (index === 23) { populateAllAccountsScreen(); }
+                    if (index === 24) { populateAllCardsScreen(); }
+                }
+            }
+            
+            function showTransactionDetail(element) {
+                currentTransactionToEdit = element;
+                const { title, value, category, date, account, description, type } = element.dataset;
+                document.getElementById('detail-name').innerText = title;
+                const valueEl = document.getElementById('detail-value');
+                valueEl.innerText = value;
+                document.getElementById('detail-category').innerText = category;
+                document.getElementById('detail-date').innerText = date;
+                document.getElementById('detail-account').innerText = account;
+                document.getElementById('detail-description').innerText = description;
+                const colorVar = type === 'income' ? '--cor-receita' : type === 'expense' ? '--cor-despesa' : '--cor-transferencia';
+                valueEl.style.color = getCssVar(colorVar);
+                showScreen(6);
+            }
+            
+            function setupTransactionForm(prefix, defaults = {}) {
+                const form = document.getElementById(`${prefix}-transaction-form`);
+                if (!form) return;
+                form.reset();
+
+                const typeTabs = form.querySelectorAll('.transaction-type-tab-btn');
+                const valueLabel = document.getElementById(`${prefix}-value-label`);
+                const valueInput = document.getElementById(`${prefix}-transaction-value`);
+                const nameInput = document.getElementById(`${prefix}-transaction-name`);
+                const categorySelector = document.getElementById(`${prefix}-category-selector`);
+                const goalSection = document.getElementById(`${prefix}-goal-selection-section`);
+                const goalSelector = document.getElementById(`${prefix}-goal-selector`);
+                const expenseOptions = document.getElementById(`${prefix}-expense-options`);
+                const paymentSourceBtns = form.querySelectorAll(`#${prefix}-payment-source .toggle-btn`);
+                const creditCardOptions = document.getElementById(`${prefix}-credit-card-options`);
+                const paymentConditionBtns = form.querySelectorAll(`#${prefix}-payment-condition .toggle-btn`);
+                const installmentsSection = document.getElementById(`${prefix}-installments-section`);
+                const accountLabel = document.getElementById(`${prefix}-account-label`);
+                const accountSelector = document.getElementById(`${prefix}-account-selector`);
+                
+                function updateButtonSelection(buttons, selectedBtn) {
+                    buttons.forEach(btn => btn.classList.remove('selected'));
+                    selectedBtn.classList.add('selected');
+                }
+
+                typeTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        updateButtonSelection(typeTabs, tab);
+                        const type = tab.dataset.type;
+                        expenseOptions.classList.toggle('hidden', type !== 'expense');
+                        document.getElementById('new-category-section').classList.toggle('hidden', type === 'transfer');
+                        
+                        if (type === 'expense') {
+                            valueLabel.innerText = 'Valor da Despesa';
+                            valueInput.style.color = getCssVar('--cor-despesa');
+                        } else if (type === 'income') {
+                            valueLabel.innerText = 'Valor da Receita';
+                            valueInput.style.color = getCssVar('--cor-receita');
+                        } else { // transfer
+                            valueLabel.innerText = 'Valor da Transferência';
+                            valueInput.style.color = getCssVar('--cor-transferencia');
                         }
-                        const goalSection = document.getElementById('new-goal-selection-section');
-                        if (goalSection) {
-                            goalSection.classList.toggle('hidden', selectedCategory.name !== 'Metas');
+                    });
+                });
+
+                paymentSourceBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        updateButtonSelection(paymentSourceBtns, btn);
+                        const source = btn.dataset.source;
+                        creditCardOptions.classList.toggle('hidden', source !== 'card');
+                        if (source === 'card') {
+                            paymentConditionBtns[0].click(); // Reset installments
+                        }
+                        installmentsSection.classList.add('hidden');
+                        if (source === 'card') {
+                            accountLabel.innerText = "Cartão";
+                            accountSelector.innerHTML = `<i data-lucide="credit-card" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Castelo Bank Final 1234</span>`;
+                        } else {
+                            accountLabel.innerText = "Conta";
+                            accountSelector.innerHTML = `<i data-lucide="landmark" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Conta Corrente</span>`;
                         }
                         lucide.createIcons();
-                        showScreen(5, { defaults: params.defaults });
-                    });
-                }
-                if (index === 20) {
-                     populateList('account-list-container', accountsAndCards, (selectedAccount) => {
-                        const selector = document.getElementById('new-account-selector');
-                        const label = document.getElementById('new-account-label');
-                        if(selector && label) {
-                            selector.innerHTML = `<i data-lucide="${selectedAccount.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedAccount.name}</span>`;
-                            label.innerText = selectedAccount.type === 'card' ? 'Cartão' : 'Conta';
-                            lucide.createIcons();
-                        }
-                        showScreen(5);
-                    });
-                }
-                if (index === 21) {
-                    setupFilterScreen();
-                }
-                 if (index === 22) {
-                    populateList('goal-list-container', goals, (selectedGoal) => {
-                        const selector = document.getElementById('new-goal-selector');
-                        if(selector) {
-                            selector.innerHTML = `<i data-lucide="${selectedGoal.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${selectedGoal.name}</span>`;
-                            lucide.createIcons();
-                        }
-                        showScreen(5);
-                    });
-                }
-            }
-        }
-        
-        function showTransactionDetail(element) {
-            currentTransactionToEdit = element;
-            const { title, value, category, date, account, description, type } = element.dataset;
-            document.getElementById('detail-name').innerText = title;
-            const valueEl = document.getElementById('detail-value');
-            valueEl.innerText = value;
-            document.getElementById('detail-category').innerText = category;
-            document.getElementById('detail-date').innerText = date;
-            document.getElementById('detail-account').innerText = account;
-            document.getElementById('detail-description').innerText = description;
-            const colorVar = type === 'income' ? '--cor-receita' : type === 'expense' ? '--cor-despesa' : '--cor-transferencia';
-            valueEl.style.color = getCssVar(colorVar);
-            showScreen(6);
-        }
-        
-        function setupTransactionForm(prefix, defaults = {}) {
-            const form = document.getElementById(`${prefix}-transaction-form`);
-            if (!form) return;
-            form.reset();
-
-            const typeTabs = form.querySelectorAll('.transaction-type-tab-btn');
-            const valueLabel = document.getElementById(`${prefix}-value-label`);
-            const valueInput = document.getElementById(`${prefix}-transaction-value`);
-            const nameInput = document.getElementById(`${prefix}-transaction-name`);
-            const categorySelector = document.getElementById(`${prefix}-category-selector`);
-            const goalSection = document.getElementById(`${prefix}-goal-selection-section`);
-            const goalSelector = document.getElementById(`${prefix}-goal-selector`);
-            const expenseOptions = document.getElementById(`${prefix}-expense-options`);
-            const paymentSourceBtns = form.querySelectorAll(`#${prefix}-payment-source .toggle-btn`);
-            const creditCardOptions = document.getElementById(`${prefix}-credit-card-options`);
-            const paymentConditionBtns = form.querySelectorAll(`#${prefix}-payment-condition .toggle-btn`);
-            const installmentsSection = document.getElementById(`${prefix}-installments-section`);
-            const accountLabel = document.getElementById(`${prefix}-account-label`);
-            const accountSelector = document.getElementById(`${prefix}-account-selector`);
-            
-            function updateButtonSelection(buttons, selectedBtn) {
-                buttons.forEach(btn => btn.classList.remove('selected'));
-                selectedBtn.classList.add('selected');
-            }
-
-            typeTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    updateButtonSelection(typeTabs, tab);
-                    const type = tab.dataset.type;
-                    expenseOptions.classList.toggle('hidden', type !== 'expense');
-                    document.getElementById('new-category-section').classList.toggle('hidden', type === 'transfer');
-                    
-                    if (type === 'expense') {
-                        valueLabel.innerText = 'Valor da Despesa';
-                        valueInput.style.color = getCssVar('--cor-despesa');
-                    } else if (type === 'income') {
-                        valueLabel.innerText = 'Valor da Receita';
-                        valueInput.style.color = getCssVar('--cor-receita');
-                    } else { // transfer
-                        valueLabel.innerText = 'Valor da Transferência';
-                        valueInput.style.color = getCssVar('--cor-transferencia');
-                    }
-                });
-            });
-
-            paymentSourceBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    updateButtonSelection(paymentSourceBtns, btn);
-                    const source = btn.dataset.source;
-                    creditCardOptions.classList.toggle('hidden', source !== 'card');
-                    if (source === 'card') {
-                        paymentConditionBtns[0].click(); // Reset installments
-                    }
-                    installmentsSection.classList.add('hidden');
-                    if (source === 'card') {
-                        accountLabel.innerText = "Cartão";
-                        accountSelector.innerHTML = `<i data-lucide="credit-card" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Castelo Bank Final 1234</span>`;
-                    } else {
-                        accountLabel.innerText = "Conta";
-                        accountSelector.innerHTML = `<i data-lucide="landmark" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Conta Corrente</span>`;
-                    }
-                    lucide.createIcons();
-                });
-            });
-
-            paymentConditionBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    updateButtonSelection(paymentConditionBtns, btn);
-                    installmentsSection.classList.toggle('hidden', btn.dataset.condition !== 'installments');
-                });
-            });
-
-            // Set defaults
-            typeTabs[0].click();
-            paymentSourceBtns[1].click();
-            paymentConditionBtns[0].click();
-            goalSection.classList.add('hidden');
-            categorySelector.innerHTML = `<i data-lucide="shopping-cart" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Alimentação</span>`;
-            goalSelector.innerHTML = `<i data-lucide="target" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Selecionar Meta</span>`;
-            
-            if (defaults.description) nameInput.value = defaults.description;
-            if (defaults.category) {
-                const category = expenseCategoriesWithIcons.find(c => c.name === defaults.category);
-                if (category) {
-                    categorySelector.innerHTML = `<i data-lucide="${category.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${category.name}</span>`;
-                    if(category.name === 'Metas') {
-                        goalSection.classList.remove('hidden');
-                        if(defaults.goal) {
-                           const goal = goals.find(g => g.name === defaults.goal);
-                           if(goal) goalSelector.innerHTML = `<i data-lucide="${goal.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${goal.name}</span>`;
-                        }
-                    }
-                }
-            }
-            lucide.createIcons();
-
-            const categoryLink = document.getElementById(`${prefix}-category-selector-link`);
-            if (categoryLink) {
-                const newCategoryLink = categoryLink.cloneNode(true);
-                categoryLink.parentNode.replaceChild(newCategoryLink, categoryLink);
-
-                newCategoryLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const currentForm = document.getElementById(`${prefix}-transaction-form`);
-                    if (currentForm) {
-                        const selectedTab = currentForm.querySelector('.transaction-type-tab-btn.selected');
-                        const type = selectedTab ? selectedTab.dataset.type : 'expense';
-                        showScreen(19, { transactionType: type, defaults: defaults });
-                    }
-                });
-            }
-        }
-
-        function showConfirmationModal(message, onConfirm) {
-            const modal = document.getElementById('confirmation-modal');
-            document.getElementById('modal-message').innerText = message;
-            modal.classList.remove('hidden');
-            const confirmBtn = document.getElementById('modal-confirm-btn');
-            const cancelBtn = document.getElementById('modal-cancel-btn');
-            const confirmHandler = () => { onConfirm(); hideModal(); };
-            const cancelHandler = () => { hideModal(); };
-            const hideModal = () => {
-                modal.classList.add('hidden');
-                confirmBtn.removeEventListener('click', confirmHandler);
-                cancelBtn.removeEventListener('click', cancelHandler);
-            };
-            confirmBtn.addEventListener('click', confirmHandler, { once: true });
-            cancelBtn.addEventListener('click', cancelHandler, { once: true });
-        }
-
-        function createOrUpdateCharts() {
-            if (barChartInstance) { barChartInstance.destroy(); }
-            if (pieChartInstance) { pieChartInstance.destroy(); }
-            const textColor = getCssVar('--cor-texto-secundario');
-            const gridColor = getCssVar('--cor-borda');
-            const barCtx = document.getElementById('mainBarChart').getContext('2d');
-            barChartInstance = new Chart(barCtx, { type: 'bar', data: { labels: ['Abr', 'Mai', 'Jun', 'Jul'], datasets: [{ label: 'Receitas', data: [5200, 5300, 5500, 5000], backgroundColor: getCssVar('--cor-receita'), borderRadius: 4, }, { label: 'Despesas', data: [3400, 3800, 4100, 2650], backgroundColor: getCssVar('--cor-despesa'), borderRadius: 4, }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } } } });
-            const pieCtx = document.getElementById('pieChart').getContext('2d');
-            pieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte'], datasets: [{ data: [1500, 650.20, 500], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
-        }
-        
-        // --- QUESTIONNAIRE LOGIC ---
-        const questions = [
-            "Sinto uma apreensão significativa quando preciso tomar decisões importantes sobre dinheiro.",
-            "Confio mais na minha própria análise detalhada do que na opinião geral do mercado ou de especialistas.",
-            "A segurança e a preservação do meu dinheiro são mais importantes do que a chance de obter grandes lucros.",
-            "Considero as experiências e recomendações de pessoas próximas ao fazer escolhas financeiras.",
-            "Busco um equilíbrio claro entre gastar hoje e guardar para o futuro em minhas finanças.",
-            "Prefiro manter meu dinheiro em aplicações muito seguras, mesmo que rendam abaixo da inflação.",
-            "Prefiro seguir recomendações de consultores financeiros do que fazer minha própria pesquisa aprofundada.",
-            "Tomo decisões financeiras importantes rapidamente, confiando na minha intuição ou visão.",
-            "Quando vejo algo que me agrada, costumo comprá-lo no momento, mesmo sem ter planejado.",
-            "Sinto-me confortável com minha estratégia financeira atual e não vejo necessidade de mudanças drásticas.",
-            "Sinto-me tranquilo(a) e confiante sobre minha situação financeira futura.",
-            "Gasto tempo entendendo a fundo como funcionam os produtos financeiros ou os bens que compro.",
-            "Estou sempre atento(a) a oportunidades de alto crescimento, mesmo que envolvam riscos maiores.",
-            "Minhas decisões de compra são baseadas principalmente em necessidade e valor, independente da opinião de outros.",
-            "É difícil para mim manter um orçamento ou um plano financeiro consistente.",
-            "Mesmo quando tenho dinheiro guardado, a ideia de uma despesa inesperada me causa muita ansiedade.",
-            "Minhas decisões de investimento são baseadas primariamente em dados, fatos e lógica.",
-            "A possibilidade de um ganho financeiro expressivo me motiva mais do que o medo de perder.",
-            "Sinto satisfação em compartilhar boas experiências de compra ou conquistas financeiras com pessoas próximas.",
-            "Reviso minhas finanças periodicamente, mas sem obsessão, apenas para garantir que estou no caminho certo.",
-            "Tenho dificuldade em gastar dinheiro comigo mesmo(a) em coisas que não sejam estritamente necessárias.",
-            "Prefiro estudar detalhadamente os riscos antes de tomar decisões financeiras importantes.",
-            "Se eu tiver uma forte convicção sobre um investimento, estou disposto(a) a concentrar uma parte significativa do meu dinheiro nele.",
-            "Sinto uma satisfação especial ao comprar algo que está sendo muito comentado ou desejado por outros.",
-            "Busco equilibrar segurança e crescimento em minhas decisões financeiras.",
-            "Esta pergunta é para verificar sua atenção. Por favor, marque \"Concordo Parcialmente\".",
-            "Respondo a questionários sempre com total honestidade, mesmo quando as perguntas são pessoais."
-        ];
-        const answers = ["Discordo Totalmente", "Discordo Parcialmente", "Neutro/Indeciso", "Concordo Parcialmente", "Concordo Totalmente"];
-        let currentQuestionIndex = 0;
-        const userAnswers = [];
-
-        const profileInfo = {
-            CI: {
-                title: "Coração Inquieto",
-                description: "Você tende a sentir apreensão com decisões financeiras e busca segurança, preferindo caminhos mais cautelosos para proteger seu patrimônio. A ansiedade com gastos inesperados é uma característica presente."
-            },
-            CA: {
-                title: "Construtor Analítico",
-                description: "Você confia em dados e na sua própria análise detalhada. Gasta tempo entendendo produtos financeiros e baseia suas decisões em lógica, buscando construir seu patrimônio de forma sólida e informada."
-            },
-            VO: {
-                title: "Visionário Ousado",
-                description: "Motivado por oportunidades de alto crescimento, você não tem medo de correr riscos. Suas decisões são rápidas, baseadas em sua intuição e em uma forte convicção sobre seus investimentos."
-            },
-            EG: {
-                title: "Explorador Generoso",
-                description: "Suas decisões financeiras são influenciadas por experiências e pelo que está em alta. Você sente satisfação em comprar e compartilhar suas conquistas, explorando novas tendências e oportunidades."
-            },
-            EC: {
-                title: "Estrategista Consciente",
-                description: "Você busca um equilíbrio claro entre o presente e o futuro, revisando suas finanças periodicamente para garantir que está no caminho certo. Sua abordagem é estratégica, visando segurança e crescimento de forma consciente."
-            }
-        };
-
-        function calculateResults() {
-            const p = userAnswers;
-            
-            // Formulas based on user specification
-            const scores = {
-                CI: (p[0] + p[5] + (6 - p[10]) + p[15] + p[20]),
-                CA: (p[1] + (6 - p[6]) + p[11] + p[16] + (6 - p[21])),
-                VO: ((6 - p[2]) + p[7] + p[12] + p[17] + p[22]),
-                EG: (p[3] + p[8] + (6 - p[13]) + p[18] + p[23]),
-                EC: (p[4] + p[9] + (6 - p[14]) + p[19] + (6 - p[24]))
-            };
-
-            const percentages = {
-                CI: Math.round((scores.CI / 25) * 100),
-                CA: Math.round((scores.CA / 25) * 100),
-                VO: Math.round((scores.VO / 25) * 100),
-                EG: Math.round((scores.EG / 25) * 100),
-                EC: Math.round((scores.EC / 25) * 100),
-            };
-            
-            let winnerProfileKey = 'CI';
-            let maxScore = -1;
-
-            for (const profileKey in percentages) {
-                if (percentages[profileKey] > maxScore) {
-                    maxScore = percentages[profileKey];
-                    winnerProfileKey = profileKey;
-                }
-            }
-            
-            return { winner: winnerProfileKey, scores: percentages };
-        }
-
-        function displayResults() {
-            const { winner, scores } = calculateResults();
-            const winnerInfo = profileInfo[winner];
-
-            document.getElementById('profile-result-title').innerText = `Seu Perfil é: ${winnerInfo.title}`;
-            document.getElementById('profile-result-description').innerText = winnerInfo.description;
-
-            const scoresContainer = document.getElementById('profile-scores');
-            scoresContainer.innerHTML = '<h3 class="text-md font-semibold text-center mb-3">Sua Pontuação</h3>'; // Clear previous scores
-            
-            const profileNames = { CI: 'Coração Inquieto', CA: 'Construtor Analítico', VO: 'Visionário Ousado', EG: 'Explorador Generoso', EC: 'Estrategista Consciente' };
-
-            for(const profileKey in scores) {
-                const scoreElement = document.createElement('div');
-                scoreElement.className = 'flex justify-between items-center text-sm';
-                scoreElement.innerHTML = `
-                    <span>${profileNames[profileKey]}</span>
-                    <span class="font-bold">${scores[profileKey]}%</span>
-                `;
-                scoresContainer.appendChild(scoreElement);
-            }
-        }
-
-        function loadQuestion(index) {
-            const questionText = document.getElementById('question-text');
-            const answerOptions = document.getElementById('answer-options');
-            const progressBar = document.getElementById('progress-bar');
-            const nextBtn = document.getElementById('next-question-btn');
-            if(!questionText || !answerOptions || !progressBar || !nextBtn) return;
-            
-            questionText.innerText = questions[index];
-            answerOptions.innerHTML = '';
-            
-            answers.forEach((answer, i) => {
-                const button = document.createElement('button');
-                button.innerText = answer;
-                button.className = 'answer-btn w-full py-3 text-sm font-medium rounded-md border-2 border-[var(--cor-borda)] hover:bg-[var(--fundo-card)]';
-                button.dataset.value = i + 1;
-                button.addEventListener('click', () => {
-                    answerOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
-                    button.classList.add('selected');
-                    nextBtn.disabled = false;
-                    userAnswers[index] = i + 1;
-                });
-                answerOptions.appendChild(button);
-            });
-
-            progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
-            nextBtn.disabled = true;
-            if (index === questions.length - 1) { nextBtn.innerText = 'Finalizar'; } else { nextBtn.innerText = 'Próximo'; }
-        }
-
-        function setupEventListeners() {
-            const nextButton = document.getElementById('next-screen-btn');
-            if(nextButton) {
-                nextButton.addEventListener('click', () => {
-                    const mainScreens = [0, 1, 2, 3, 8, 7, 9];
-                    let currentIndexInSequence = mainScreens.indexOf(currentScreenIndex);
-                    if (currentIndexInSequence === -1) { currentIndexInSequence = 1; }
-                    const nextIndexInSequence = (currentIndexInSequence + 1) % mainScreens.length;
-                    const nextScreenId = mainScreens[nextIndexInSequence];
-                    showScreen(nextScreenId);
-                });
-            }
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => { 
-                    e.preventDefault(); 
-                    const screenIndex = parseInt(link.getAttribute('data-screen'), 10);
-                    if(screenIndex) showScreen(screenIndex);
-                });
-            });
-
-            document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', () => showScreen(1)));
-            
-            const screen0Button = document.querySelector('#screen-0 form button');
-            if(screen0Button) screen0Button.addEventListener('click', () => showScreen(1));
-            
-            const profilePic = document.getElementById('profile-pic');
-            if(profilePic) profilePic.addEventListener('click', () => showScreen(7));
-            
-            const notificationsBtn = document.getElementById('notifications-btn');
-            if(notificationsBtn) notificationsBtn.addEventListener('click', () => showScreen(9));
-            
-            const plansBtn = document.getElementById('plans-btn');
-            if(plansBtn) plansBtn.addEventListener('click', () => showScreen(15));
-            
-            const saveBtn = document.getElementById('save-new-transaction-btn');
-            if(saveBtn) saveBtn.addEventListener('click', () => showScreen(1));
-            
-            document.querySelectorAll('.prev-month-btn').forEach(btn => btn.addEventListener('click', () => {
-                currentDate.setMonth(currentDate.getMonth() - 1);
-                updateAllMonthDisplays();
-            }));
-            document.querySelectorAll('.next-month-btn').forEach(btn => btn.addEventListener('click', () => {
-                currentDate.setMonth(currentDate.getMonth() + 1);
-                updateAllMonthDisplays();
-            }));
-            
-            const deleteTransactionBtn = document.getElementById('delete-transaction-btn');
-            if(deleteTransactionBtn) {
-                deleteTransactionBtn.addEventListener('click', () => {
-                    showConfirmationModal('Deseja realmente excluir este lançamento?', () => {
-                        if(currentTransactionToEdit) { currentTransactionToEdit.remove(); }
-                        showScreen(2);
                     });
                 });
-            }
-            
-            const editTransactionBtn = document.getElementById('edit-transaction-btn');
-            if(editTransactionBtn) {
-                editTransactionBtn.addEventListener('click', () => {
-                    alert("A tela de edição precisa ser implementada com o novo layout.");
-                });
-            }
-            
-            const deleteGoalBtn = document.getElementById('delete-goal-btn');
-            if(deleteGoalBtn) {
-                 deleteGoalBtn.addEventListener('click', () => {
-                    showConfirmationModal('Deseja realmente excluir esta meta?', () => { showScreen(8); });
-                });
-            }
-            
-            const addGoalTransactionBtn = document.getElementById('add-goal-transaction-btn');
-            if(addGoalTransactionBtn) {
-                addGoalTransactionBtn.addEventListener('click', () => {
-                    const goalTitleEl = document.getElementById('goal-detail-title');
-                    if(goalTitleEl) {
-                        const goalTitle = goalTitleEl.innerText;
-                        showScreen(5, { defaults: {
-                            category: 'Metas',
-                            goal: goalTitle,
-                            description: `Aporte para meta: ${goalTitle}`
-                        }});
-                    }
-                });
-            }
 
-            const questionnaireCard = document.getElementById('questionnaire-card');
-            if(questionnaireCard) {
-                questionnaireCard.addEventListener('click', () => {
-                    currentQuestionIndex = 0;
-                    userAnswers.length = 0;
-                    showScreen(14);
-                    loadQuestion(currentQuestionIndex);
-                });
-            }
-            
-            const nextQuestionBtn = document.getElementById('next-question-btn');
-            if(nextQuestionBtn) {
-                 nextQuestionBtn.addEventListener('click', () => {
-                    if (currentQuestionIndex < questions.length - 1) {
-                        currentQuestionIndex++;
-                        loadQuestion(currentQuestionIndex);
-                    } else {
-                        displayResults();
-                        showScreen(15);
-                    }
-                });
-            }
-            
-            const skipQuestionnaireBtn = document.getElementById('skip-questionnaire-btn');
-            if(skipQuestionnaireBtn) skipQuestionnaireBtn.addEventListener('click', () => showScreen(1));
-
-            document.querySelectorAll('.card-carousel').forEach(carousel => {
-                 let isDown = false, startX, scrollLeft, isDragging = false;
-                carousel.addEventListener('mousedown', (e) => {
-                    isDown = true; isDragging = false; carousel.classList.add('active');
-                    startX = e.pageX - carousel.offsetLeft; scrollLeft = carousel.scrollLeft;
-                });
-                carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('active'); });
-                carousel.addEventListener('mouseup', (e) => {
-                    isDown = false; carousel.classList.remove('active');
-                    if(isDragging) { e.preventDefault(); }
-                });
-                carousel.addEventListener('mousemove', (e) => {
-                    if (!isDown) return; e.preventDefault(); isDragging = true;
-                    const x = e.pageX - carousel.offsetLeft;
-                    const walk = (x - startX) * 2;
-                    carousel.scrollLeft = scrollLeft - walk;
-                });
-                Array.from(carousel.children).forEach(child => {
-                    child.addEventListener('click', (e) => { if(isDragging) { e.preventDefault(); e.stopPropagation(); } });
-                });
-            });
-           
-            const prevBillBtn = document.getElementById('prev-bill-btn');
-            if(prevBillBtn) prevBillBtn.addEventListener('click', () => {
-                if (currentBillIndex > 0) { currentBillIndex--; updateBillDisplay(); }
-            });
-            
-            const nextBillBtn = document.getElementById('next-bill-btn');
-            if(nextBillBtn) nextBillBtn.addEventListener('click', () => {
-                if (currentBillIndex < sampleBills.length - 1) { currentBillIndex++; updateBillDisplay(); }
-            });
-
-            const openFilterBtn = document.getElementById('open-filter-btn');
-            if(openFilterBtn) openFilterBtn.addEventListener('click', () => showScreen(21));
-            
-            document.querySelectorAll('.view-tab-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.view-tab-btn').forEach(b => b.classList.remove('selected'));
-                    btn.classList.add('selected');
-                    activeTransactionView = btn.dataset.view;
-                    renderTransactions();
-                });
-            });
-
-            const resetFiltersBtn = document.getElementById('reset-filters-btn');
-            if(resetFiltersBtn) {
-                resetFiltersBtn.addEventListener('click', () => {
-                    document.querySelectorAll('#screen-21 .filter-chip-btn.selected').forEach(btn => {
-                        btn.classList.remove('selected');
+                paymentConditionBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        updateButtonSelection(paymentConditionBtns, btn);
+                        installmentsSection.classList.toggle('hidden', btn.dataset.condition !== 'installments');
                     });
                 });
-            }
 
-            const applyFiltersBtn = document.getElementById('apply-filters-btn');
-            if(applyFiltersBtn) {
-                applyFiltersBtn.addEventListener('click', () => {
-                    applyFilters();
-                    showScreen(2);
-                });
-            }
-        }
-
-        // --- TRANSACTION VIEW & FILTERS LOGIC ---
-        function renderTransactions() {
-            const listContainer = document.getElementById('transaction-list');
-            const templateContainer = document.getElementById('all-transactions-template');
-            if (!listContainer || !templateContainer) return;
-            listContainer.innerHTML = '';
-
-            const allItemsData = Array.from(templateContainer.children).map(item => item.dataset);
-
-            const filteredByView = allItemsData.filter(data => {
-                if (activeTransactionView === 'todos') return true;
-                if (activeTransactionView === 'contas') return data.sourceType === 'account';
-                if (activeTransactionView === 'cartoes') return data.sourceType === 'card';
-                return false;
-            });
-
-            const groupedByDate = filteredByView.reduce((acc, data) => {
-                const date = data.date;
-                if (!acc[date]) acc[date] = [];
-                acc[date].push(data);
-                return acc;
-            }, {});
-
-            const sortedDates = Object.keys(groupedByDate).sort((a, b) => {
-                const dateA = new Date(a.replace(/(\d+) de (\w+), (\d+)/, '$2 $1, $3'));
-                const dateB = new Date(b.replace(/(\d+) de (\w+), (\d+)/, '$2 $1, $3'));
-                return dateB - dateA;
-            });
-
-            if (sortedDates.length === 0) {
-                listContainer.innerHTML = `<p class="text-center text-[var(--cor-texto-secundario)] p-8">Nenhum lançamento para esta visualização.</p>`;
-                return;
-            }
-
-            sortedDates.forEach(date => {
-                const dateGroupContainer = document.createElement('div');
-                dateGroupContainer.className = 'py-3 date-group';
-
-                const dateHeader = document.createElement('p');
-                dateHeader.className = 'text-sm font-bold text-[var(--cor-texto-secundario)] mb-2 px-3';
-                dateHeader.innerText = date;
-                dateGroupContainer.appendChild(dateHeader);
+                // Set defaults
+                typeTabs[0].click();
+                paymentSourceBtns[1].click();
+                paymentConditionBtns[0].click();
+                goalSection.classList.add('hidden');
+                categorySelector.innerHTML = `<i data-lucide="shopping-cart" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Alimentação</span>`;
+                goalSelector.innerHTML = `<i data-lucide="target" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>Selecionar Meta</span>`;
                 
-                const itemsContainer = document.createElement('div');
-                itemsContainer.className = 'space-y-1';
+                if (defaults && defaults.description) nameInput.value = defaults.description;
+                if (defaults && defaults.category) {
+                    const category = expenseCategoriesWithIcons.find(c => c.name === defaults.category);
+                    if (category) {
+                        categorySelector.innerHTML = `<i data-lucide="${category.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${category.name}</span>`;
+                        if(category.name === 'Metas') {
+                            goalSection.classList.remove('hidden');
+                            if(defaults.goal) {
+                               const goal = goals.find(g => g.name === defaults.goal);
+                               if(goal) goalSelector.innerHTML = `<i data-lucide="${goal.icon}" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i><span>${goal.name}</span>`;
+                            }
+                        }
+                    }
+                }
+                lucide.createIcons();
 
-                groupedByDate[date].forEach(data => {
-                    const itemEl = document.createElement('div');
-                    itemEl.className = 'transaction-item bg-[var(--fundo-elemento)] p-3 rounded-lg flex justify-between items-center cursor-pointer hover:bg-white/10';
-                    Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
+                const categoryLink = document.getElementById(`${prefix}-category-selector-link`);
+                if (categoryLink) {
+                    const newCategoryLink = categoryLink.cloneNode(true);
+                    categoryLink.parentNode.replaceChild(newCategoryLink, categoryLink);
 
-                    const { title, value, category, type, status } = data;
-                    const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
-                    const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
-                    const statusColorMap = { 'pago': 'text-[var(--cor-receita)]', 'pendente': 'text-[var(--cor-despesa)]' };
-                    const statusTextMap = { 'pago': 'pago', 'pendente': 'pendente' };
-                    if(type === 'income') statusTextMap.pago = 'recebido';
+                    newCategoryLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const currentForm = document.getElementById(`${prefix}-transaction-form`);
+                        if (currentForm) {
+                            const selectedTab = currentForm.querySelector('.transaction-type-tab-btn.selected');
+                            const type = selectedTab ? selectedTab.dataset.type : 'expense';
+                            showScreen(19, { transactionType: type, defaults: defaults });
+                        }
+                    });
+                }
+            }
 
-                    itemEl.innerHTML = `
-                        <div class="flex items-center overflow-hidden mr-2">
-                            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-[#002147] mr-3">
-                                <i data-lucide="${iconMap[category] || iconMap[type] || 'tag'}" class="w-5 h-5" style="color: var(${colorMap[type]})"></i>
+            function showConfirmationModal(message, onConfirm) {
+                const modal = document.getElementById('confirmation-modal');
+                document.getElementById('modal-message').innerText = message;
+                modal.classList.remove('hidden');
+                const confirmBtn = document.getElementById('modal-confirm-btn');
+                const cancelBtn = document.getElementById('modal-cancel-btn');
+                const confirmHandler = () => { onConfirm(); hideModal(); };
+                const cancelHandler = () => { hideModal(); };
+                const hideModal = () => {
+                    modal.classList.add('hidden');
+                    confirmBtn.removeEventListener('click', confirmHandler);
+                    cancelBtn.removeEventListener('click', cancelHandler);
+                };
+                confirmBtn.addEventListener('click', confirmHandler, { once: true });
+                cancelBtn.addEventListener('click', cancelHandler, { once: true });
+            }
+
+            function createOrUpdateCharts() {
+                if (barChartInstance) { barChartInstance.destroy(); }
+                if (pieChartInstance) { pieChartInstance.destroy(); }
+                const textColor = getCssVar('--cor-texto-secundario');
+                const gridColor = getCssVar('--cor-borda');
+                const barCtx = document.getElementById('mainBarChart').getContext('2d');
+                barChartInstance = new Chart(barCtx, { type: 'bar', data: { labels: ['Abr', 'Mai', 'Jun', 'Jul'], datasets: [{ label: 'Receitas', data: [5200, 5300, 5500, 5000], backgroundColor: getCssVar('--cor-receita'), borderRadius: 4, }, { label: 'Despesas', data: [3400, 3800, 4100, 2650], backgroundColor: getCssVar('--cor-despesa'), borderRadius: 4, }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } }, x: { ticks: { color: textColor }, grid: { display: false } } } } });
+                const pieCtx = document.getElementById('pieChart').getContext('2d');
+                pieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte'], datasets: [{ data: [1500, 650.20, 500], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
+            }
+            
+            // --- QUESTIONNAIRE LOGIC ---
+            const questions = [
+                "Sinto uma apreensão significativa quando preciso tomar decisões importantes sobre dinheiro.",
+                "Confio mais na minha própria análise detalhada do que na opinião geral do mercado ou de especialistas.",
+                "A segurança e a preservação do meu dinheiro são mais importantes do que a chance de obter grandes lucros.",
+                "Considero as experiências e recomendações de pessoas próximas ao fazer escolhas financeiras.",
+                "Busco um equilíbrio claro entre gastar hoje e guardar para o futuro em minhas finanças.",
+                "Prefiro manter meu dinheiro em aplicações muito seguras, mesmo que rendam abaixo da inflação.",
+                "Prefiro seguir recomendações de consultores financeiros do que fazer minha própria pesquisa aprofundada.",
+                "Tomo decisões financeiras importantes rapidamente, confiando na minha intuição ou visão.",
+                "Quando vejo algo que me agrada, costumo comprá-lo no momento, mesmo sem ter planejado.",
+                "Sinto-me confortável com minha estratégia financeira atual e não vejo necessidade de mudanças drásticas.",
+                "Sinto-me tranquilo(a) e confiante sobre minha situação financeira futura.",
+                "Gasto tempo entendendo a fundo como funcionam os produtos financeiros ou os bens que compro.",
+                "Estou sempre atento(a) a oportunidades de alto crescimento, mesmo que envolvam riscos maiores.",
+                "Minhas decisões de compra são baseadas principalmente em necessidade e valor, independente da opinião de outros.",
+                "É difícil para mim manter um orçamento ou um plano financeiro consistente.",
+                "Mesmo quando tenho dinheiro guardado, a ideia de uma despesa inesperada me causa muita ansiedade.",
+                "Minhas decisões de investimento são baseadas primariamente em dados, fatos e lógica.",
+                "A possibilidade de um ganho financeiro expressivo me motiva mais do que o medo de perder.",
+                "Sinto satisfação em compartilhar boas experiências de compra ou conquistas financeiras com pessoas próximas.",
+                "Reviso minhas finanças periodicamente, mas sem obsessão, apenas para garantir que estou no caminho certo.",
+                "Tenho dificuldade em gastar dinheiro comigo mesmo(a) em coisas que não sejam estritamente necessárias.",
+                "Prefiro estudar detalhadamente os riscos antes de tomar decisões financeiras importantes.",
+                "Se eu tiver uma forte convicção sobre um investimento, estou disposto(a) a concentrar uma parte significativa do meu dinheiro nele.",
+                "Sinto uma satisfação especial ao comprar algo que está sendo muito comentado ou desejado por outros.",
+                "Busco equilibrar segurança e crescimento em minhas decisões financeiras.",
+                "Esta pergunta é para verificar sua atenção. Por favor, marque \"Concordo Parcialmente\".",
+                "Respondo a questionários sempre com total honestidade, mesmo quando as perguntas são pessoais."
+            ];
+            const answers = ["Discordo Totalmente", "Discordo Parcialmente", "Neutro/Indeciso", "Concordo Parcialmente", "Concordo Totalmente"];
+            let currentQuestionIndex = 0;
+            const userAnswers = [];
+
+            const profileInfo = {
+                CI: {
+                    title: "Coração Inquieto",
+                    description: "Você tende a sentir apreensão com decisões financeiras e busca segurança, preferindo caminhos mais cautelosos para proteger seu patrimônio. A ansiedade com gastos inesperados é uma característica presente."
+                },
+                CA: {
+                    title: "Construtor Analítico",
+                    description: "Você confia em dados e na sua própria análise detalhada. Gasta tempo entendendo produtos financeiros e baseia suas decisões em lógica, buscando construir seu patrimônio de forma sólida e informada."
+                },
+                VO: {
+                    title: "Visionário Ousado",
+                    description: "Motivado por oportunidades de alto crescimento, você não tem medo de correr riscos. Suas decisões são rápidas, baseadas em sua intuição e em uma forte convicção sobre seus investimentos."
+                },
+                EG: {
+                    title: "Explorador Generoso",
+                    description: "Suas decisões financeiras são influenciadas por experiências e pelo que está em alta. Você sente satisfação em comprar e compartilhar suas conquistas, explorando novas tendências e oportunidades."
+                },
+                EC: {
+                    title: "Estrategista Consciente",
+                    description: "Você busca um equilíbrio claro entre o presente e o futuro, revisando suas finanças periodicamente para garantir que está no caminho certo. Sua abordagem é estratégica, visando segurança e crescimento de forma consciente."
+                }
+            };
+
+            function calculateResults() {
+                const p = userAnswers;
+                
+                // Formulas based on user specification
+                const scores = {
+                    CI: (p[0] + p[5] + (6 - p[10]) + p[15] + p[20]),
+                    CA: (p[1] + (6 - p[6]) + p[11] + p[16] + (6 - p[21])),
+                    VO: ((6 - p[2]) + p[7] + p[12] + p[17] + p[22]),
+                    EG: (p[3] + p[8] + (6 - p[13]) + p[18] + p[23]),
+                    EC: (p[4] + p[9] + (6 - p[14]) + p[19] + (6 - p[24]))
+                };
+
+                const percentages = {
+                    CI: Math.round((scores.CI / 25) * 100),
+                    CA: Math.round((scores.CA / 25) * 100),
+                    VO: Math.round((scores.VO / 25) * 100),
+                    EG: Math.round((scores.EG / 25) * 100),
+                    EC: Math.round((scores.EC / 25) * 100),
+                };
+                
+                let winnerProfileKey = 'CI';
+                let maxScore = -1;
+
+                for (const profileKey in percentages) {
+                    if (percentages[profileKey] > maxScore) {
+                        maxScore = percentages[profileKey];
+                        winnerProfileKey = profileKey;
+                    }
+                }
+                
+                return { winner: winnerProfileKey, scores: percentages };
+            }
+
+            function displayResults() {
+                const { winner, scores } = calculateResults();
+                const winnerInfo = profileInfo[winner];
+
+                document.getElementById('profile-result-title').innerText = `Seu Perfil é: ${winnerInfo.title}`;
+                document.getElementById('profile-result-description').innerText = winnerInfo.description;
+
+                const scoresContainer = document.getElementById('profile-scores');
+                scoresContainer.innerHTML = '<h3 class="text-md font-semibold text-center mb-3">Sua Pontuação</h3>'; // Clear previous scores
+                
+                const profileNames = { CI: 'Coração Inquieto', CA: 'Construtor Analítico', VO: 'Visionário Ousado', EG: 'Explorador Generoso', EC: 'Estrategista Consciente' };
+
+                for(const profileKey in scores) {
+                    const scoreElement = document.createElement('div');
+                    scoreElement.className = 'flex justify-between items-center text-sm';
+                    scoreElement.innerHTML = `
+                        <span>${profileNames[profileKey]}</span>
+                        <span class="font-bold">${scores[profileKey]}%</span>
+                    `;
+                    scoresContainer.appendChild(scoreElement);
+                }
+            }
+
+            function loadQuestion(index) {
+                const questionText = document.getElementById('question-text');
+                const answerOptions = document.getElementById('answer-options');
+                const progressBar = document.getElementById('progress-bar');
+                const nextBtn = document.getElementById('next-question-btn');
+                if(!questionText || !answerOptions || !progressBar || !nextBtn) return;
+                
+                questionText.innerText = questions[index];
+                answerOptions.innerHTML = '';
+                
+                answers.forEach((answer, i) => {
+                    const button = document.createElement('button');
+                    button.innerText = answer;
+                    button.className = 'answer-btn w-full py-3 text-sm font-medium rounded-md border-2 border-[var(--cor-borda)] hover:bg-[var(--fundo-card)]';
+                    button.dataset.value = i + 1;
+                    button.addEventListener('click', () => {
+                        answerOptions.querySelectorAll('button').forEach(btn => btn.classList.remove('selected'));
+                        button.classList.add('selected');
+                        nextBtn.disabled = false;
+                        userAnswers[index] = i + 1;
+                    });
+                    answerOptions.appendChild(button);
+                });
+
+                progressBar.style.width = `${((index + 1) / questions.length) * 100}%`;
+                nextBtn.disabled = true;
+                if (index === questions.length - 1) { nextBtn.innerText = 'Finalizar'; } else { nextBtn.innerText = 'Próximo'; }
+            }
+
+            // --- TRANSACTION VIEW & FILTERS LOGIC ---
+            function renderTransactions() {
+                const listContainer = document.getElementById('transaction-list');
+                const templateContainer = document.getElementById('all-transactions-template');
+                if (!listContainer || !templateContainer) return;
+                listContainer.innerHTML = '';
+
+                const allItemsData = Array.from(templateContainer.children).map(item => item.dataset);
+
+                const filteredByView = allItemsData.filter(data => {
+                    if (activeTransactionView === 'todos') return true;
+                    if (activeTransactionView === 'contas') return data.sourceType === 'account';
+                    if (activeTransactionView === 'cartoes') return data.sourceType === 'card';
+                    return false;
+                });
+
+                const groupedByDate = filteredByView.reduce((acc, data) => {
+                    const date = data.date;
+                    if (!acc[date]) acc[date] = [];
+                    acc[date].push(data);
+                    return acc;
+                }, {});
+
+                const sortedDates = Object.keys(groupedByDate).sort((a, b) => {
+                    const dateA = new Date(a.replace(/(\d+) de (\w+), (\d+)/, '$2 $1, $3'));
+                    const dateB = new Date(b.replace(/(\d+) de (\w+), (\d+)/, '$2 $1, $3'));
+                    return dateB - dateA;
+                });
+
+                if (sortedDates.length === 0) {
+                    listContainer.innerHTML = `<p class="text-center text-[var(--cor-texto-secundario)] p-8">Nenhum lançamento para esta visualização.</p>`;
+                    return;
+                }
+
+                sortedDates.forEach(date => {
+                    const dateGroupContainer = document.createElement('div');
+                    dateGroupContainer.className = 'py-3 date-group';
+
+                    const dateHeader = document.createElement('p');
+                    dateHeader.className = 'text-sm font-bold text-[var(--cor-texto-secundario)] mb-2 px-3';
+                    dateHeader.innerText = date;
+                    dateGroupContainer.appendChild(dateHeader);
+                    
+                    const itemsContainer = document.createElement('div');
+                    itemsContainer.className = 'space-y-1';
+
+                    groupedByDate[date].forEach(data => {
+                        const itemEl = document.createElement('div');
+                        itemEl.className = 'transaction-item bg-[var(--fundo-elemento)] p-3 rounded-lg flex justify-between items-center cursor-pointer hover:bg-white/10';
+                        Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
+
+                        const { title, value, category, type, status } = data;
+                        const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
+                        const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
+                        const statusColorMap = { 'pago': 'text-[var(--cor-receita)]', 'pendente': 'text-[var(--cor-despesa)]' };
+                        const statusTextMap = { 'pago': 'pago', 'pendente': 'pendente' };
+                        if(type === 'income') statusTextMap.pago = 'recebido';
+
+                        itemEl.innerHTML = `
+                            <div class="flex items-center overflow-hidden mr-2">
+                                <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-[#002147] mr-3">
+                                    <i data-lucide="${iconMap[category] || iconMap[type] || 'tag'}" class="w-5 h-5" style="color: var(${colorMap[type]})"></i>
+                                </div>
+                                <div class="truncate">
+                                    <p class="font-semibold text-[var(--cor-texto-principal)] truncate">${title}</p>
+                                    <p class="text-xs text-[var(--cor-texto-secundario)] truncate">${category}</p>
+                                </div>
                             </div>
-                            <div class="truncate">
-                                <p class="font-semibold text-[var(--cor-texto-principal)] truncate">${title}</p>
-                                <p class="text-xs text-[var(--cor-texto-secundario)] truncate">${category}</p>
+                            <div class="text-right flex-shrink-0">
+                                <p class="font-bold" style="color: var(${colorMap[type]})">${value}</p>
+                                ${status ? `<p class="text-xs ${statusColorMap[status]}">${statusTextMap[status]}</p>` : ''}
+                            </div>
+                        `;
+                        itemEl.addEventListener('click', () => showTransactionDetail(itemEl));
+                        itemsContainer.appendChild(itemEl);
+                    });
+
+                    dateGroupContainer.appendChild(itemsContainer);
+                    listContainer.appendChild(dateGroupContainer);
+                });
+
+                lucide.createIcons();
+                applyFilters();
+            }
+
+
+            function setupFilterScreen() {
+                const accounts = accountsAndCards.filter(a => a.type === 'account').map(a => a.name);
+                const cards = accountsAndCards.filter(a => a.type === 'card').map(a => a.name);
+                const allCategories = [...new Set([...expenseCategoriesWithIcons, ...incomeCategoriesWithIcons].map(c => c.name))];
+
+                populateFilterOptions('filter-account-options', accounts, 'account');
+                populateFilterOptions('filter-card-options', cards, 'card');
+                populateFilterOptions('filter-category-options', allCategories, 'category');
+
+                document.getElementById('filter-section-type').style.display = activeTransactionView === 'todos' ? 'block' : 'none';
+                document.getElementById('filter-section-accounts').style.display = ['todos', 'contas'].includes(activeTransactionView) ? 'block' : 'none';
+                document.getElementById('filter-section-cards').style.display = ['todos', 'cartoes'].includes(activeTransactionView) ? 'block' : 'none';
+                document.getElementById('filter-section-status').style.display = activeTransactionView !== 'cartoes' ? 'block' : 'none';
+
+
+                document.querySelectorAll('#screen-21 .filter-chip-btn').forEach(btn => {
+                    btn.addEventListener('click', () => btn.classList.toggle('selected'));
+                });
+            }
+
+            function populateFilterOptions(containerId, options, group) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+                container.innerHTML = '';
+                options.forEach(option => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-chip-btn py-2 px-4 rounded-full border-2 border-[var(--cor-borda)] text-sm';
+                    btn.dataset.filterGroup = group;
+                    btn.dataset.filterValue = option;
+                    btn.innerText = option;
+                    container.appendChild(btn);
+                });
+            }
+
+            function applyFilters() {
+                const selectedTypes = Array.from(document.querySelectorAll('#filter-type-options .selected')).map(btn => btn.dataset.filterValue);
+                const selectedStatuses = Array.from(document.querySelectorAll('#filter-status-options .selected')).map(btn => btn.dataset.filterValue);
+                const selectedAccounts = [
+                    ...Array.from(document.querySelectorAll('#filter-account-options .selected')),
+                    ...Array.from(document.querySelectorAll('#filter-card-options .selected'))
+                ].map(btn => btn.dataset.filterValue);
+                const selectedCategories = Array.from(document.querySelectorAll('#filter-category-options .selected')).map(btn => btn.dataset.filterValue);
+
+                const allTransactionItems = document.querySelectorAll('#transaction-list .transaction-item');
+                
+                allTransactionItems.forEach(item => {
+                    const itemSourceType = item.dataset.sourceType;
+                    const itemType = item.dataset.type;
+                    const itemStatus = item.dataset.status;
+                    const itemAccount = item.dataset.account;
+                    const itemCategory = item.dataset.category;
+
+                    const viewMatch = activeTransactionView === 'todos' || 
+                                      (activeTransactionView === 'contas' && itemSourceType === 'account') ||
+                                      (activeTransactionView === 'cartoes' && itemSourceType === 'card');
+
+                    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(itemType);
+                    const statusMatch = selectedStatuses.length === 0 || item.dataset.sourceType === 'card' || selectedStatuses.includes(itemStatus);
+                    const accountMatch = selectedAccounts.length === 0 || selectedAccounts.includes(itemAccount);
+                    const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(itemCategory);
+
+                    if (viewMatch && typeMatch && statusMatch && accountMatch && categoryMatch) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                const dateGroups = document.querySelectorAll('#transaction-list .date-group');
+                let hasVisibleItems = false;
+                dateGroups.forEach(group => {
+                    const visibleItemsInGroup = group.querySelectorAll('.transaction-item[style*="display: flex"]');
+                    if (visibleItemsInGroup.length > 0) {
+                        group.style.display = 'block';
+                        hasVisibleItems = true;
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+
+                const listContainer = document.getElementById('transaction-list');
+                const noResultsMessage = listContainer.querySelector('.no-results-message');
+                if (noResultsMessage) noResultsMessage.remove();
+
+                if (!hasVisibleItems && listContainer) {
+                     listContainer.innerHTML += `<p class="no-results-message text-center text-[var(--cor-texto-secundario)] p-8">Nenhum lançamento encontrado com os filtros selecionados.</p>`;
+                }
+            }
+
+            // --- DASHBOARD SETUP ---
+            function setupDashboard() {
+                // Balance Toggle
+                const toggleBtn = document.getElementById('toggle-balance-btn');
+                const balanceEl = document.getElementById('balance-amount');
+                if (toggleBtn && balanceEl) {
+                    if (!toggleBtn.hasListener) {
+                        let balanceVisible = true;
+                        toggleBtn.addEventListener('click', () => {
+                            balanceVisible = !balanceVisible;
+                            balanceEl.innerText = balanceVisible ? 'R$ 12.450,75' : 'R$ ••••••';
+                            toggleBtn.innerHTML = `<i data-lucide="${balanceVisible ? 'eye' : 'eye-off'}" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>`;
+                            lucide.createIcons();
+                        });
+                        toggleBtn.hasListener = true;
+                    }
+                }
+
+                // Populate Carousels
+                populateAccountsCarousel();
+                populateCardsCarousel();
+                populateRecentTransactionsCarousel();
+                createDashboardPieChart();
+            }
+
+            function populateAccountsCarousel() {
+                const container = document.getElementById('accounts-carousel');
+                if (!container) return;
+                container.innerHTML = '';
+                accountsAndCards.filter(item => item.type === 'account').forEach(account => {
+                    const card = document.createElement('div');
+                    card.className = 'w-40 h-24 p-3 rounded-xl bg-[var(--fundo-card)] flex flex-col justify-between cursor-pointer';
+                    card.innerHTML = `
+                        <div>
+                            <p class="font-bold text-sm">${account.bank}</p>
+                            <p class="text-xs text-[var(--cor-texto-secundario)]">${account.name}</p>
+                        </div>
+                        <p class="font-bold text-lg text-right">${account.balance}</p>
+                    `;
+                    container.appendChild(card);
+                });
+                // Add "Add Account" button
+                container.innerHTML += `
+                    <div class="w-40 h-24 rounded-xl bg-[var(--fundo-elemento)] border-2 border-dashed border-[var(--cor-borda)] flex items-center justify-center cursor-pointer hover:bg-white/10" onclick="showScreen(25)">
+                        <div class="text-center">
+                            <i data-lucide="plus" class="w-6 h-6 mx-auto text-[var(--cor-texto-secundario)]"></i>
+                            <p class="mt-1 text-xs font-semibold text-[var(--cor-texto-secundario)]">Adicionar Conta</p>
+                        </div>
+                    </div>`;
+                lucide.createIcons();
+            }
+
+            function populateCardsCarousel() {
+                const container = document.getElementById('cards-carousel');
+                 if (!container) return;
+                container.innerHTML = '';
+                accountsAndCards.filter(item => item.type === 'card').forEach(card => {
+                    const cardEl = document.createElement('div');
+                    cardEl.className = 'w-40 h-24 p-3 rounded-xl bg-gradient-to-br from-gray-700 to-gray-900 flex flex-col justify-between cursor-pointer';
+                    cardEl.onclick = () => showScreen(17);
+                    cardEl.innerHTML = `
+                        <span class="text-white font-bold text-sm">Castelo Bank</span>
+                        <div>
+                            <p class="text-gray-300 text-xs">${card.name.replace(' Final', '...')}</p>
+                            <p class="text-white font-mono tracking-wider text-sm">**** ${card.name.slice(-4)}</p>
+                        </div>
+                    `;
+                    container.appendChild(cardEl);
+                });
+                 // Add "Add Card" button
+                container.innerHTML += `
+                    <div class="w-40 h-24 rounded-xl bg-[var(--fundo-elemento)] border-2 border-dashed border-[var(--cor-borda)] flex items-center justify-center cursor-pointer hover:bg-white/10" onclick="showScreen(18)">
+                        <div class="text-center">
+                            <i data-lucide="plus" class="w-6 h-6 mx-auto text-[var(--cor-texto-secundario)]"></i>
+                            <p class="mt-1 text-xs font-semibold text-[var(--cor-texto-secundario)]">Adicionar Cartão</p>
+                        </div>
+                    </div>`;
+                lucide.createIcons();
+            }
+
+            function populateAllAccountsScreen() {
+                const container = document.getElementById('all-accounts-list');
+                if (!container) return;
+                container.innerHTML = ''; // Clear existing content
+                accountsAndCards.filter(item => item.type === 'account').forEach(account => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'bg-[var(--fundo-card)] p-4 rounded-lg flex justify-between items-center';
+                    itemEl.innerHTML = `
+                        <div class="flex items-center">
+                            <i data-lucide="${account.icon}" class="w-8 h-8 text-[var(--cor-acento-dourado)] mr-4"></i>
+                            <div>
+                                <p class="font-bold text-md">${account.bank}</p>
+                                <p class="text-sm text-[var(--cor-texto-secundario)]">${account.name}</p>
                             </div>
                         </div>
-                        <div class="text-right flex-shrink-0">
-                            <p class="font-bold" style="color: var(${colorMap[type]})">${value}</p>
-                            ${status ? `<p class="text-xs ${statusColorMap[status]}">${statusTextMap[status]}</p>` : ''}
+                        <p class="font-bold text-lg">${account.balance}</p>
+                    `;
+                    container.appendChild(itemEl);
+                });
+                lucide.createIcons();
+            }
+
+            function populateAllCardsScreen() {
+                const container = document.getElementById('all-cards-list');
+                if (!container) return;
+                container.innerHTML = ''; // Clear existing content
+                accountsAndCards.filter(item => item.type === 'card').forEach(card => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'w-full p-4 rounded-2xl bg-gradient-to-br from-gray-700 to-gray-900 flex flex-col justify-between shadow-lg cursor-pointer';
+                    itemEl.onclick = () => showScreen(17);
+                    itemEl.innerHTML = `
+                        <div class="flex justify-between items-start">
+                            <span class="text-white font-bold text-lg">Castelo Bank</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12" viewBox="0 0 24 24"><circle cx="10" cy="12" r="7" fill="#EA001B"/><circle cx="14" cy="12" r="7" fill="#F79E1B" fill-opacity=".8"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-white font-mono tracking-widest text-xl mb-1">**** **** **** ${card.name.slice(-4)}</p>
+                            <div class="flex justify-between text-sm">
+                                <p class="text-gray-300">Usuário</p>
+                                <p class="text-gray-300">12/29</p>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(itemEl);
+                });
+            }
+            
+            function populateRecentTransactionsCarousel() {
+                const container = document.getElementById('recent-transactions-carousel');
+                if (!container) return;
+                container.innerHTML = '';
+                const templateContainer = document.getElementById('all-transactions-template');
+                const allItemsData = Array.from(templateContainer.children).map(item => item.dataset).slice(0, 5); // Get first 5 for example
+
+                allItemsData.forEach(data => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'transaction-item bg-[var(--fundo-card)] p-3 rounded-lg flex-shrink-0 w-60 flex items-center cursor-pointer hover:bg-white/10';
+                    Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
+
+                    const { title, value, category, type } = data;
+                    const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
+                    const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
+
+                    itemEl.innerHTML = `
+                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-[#002147] mr-3">
+                            <i data-lucide="${iconMap[category] || iconMap[type] || 'tag'}" class="w-5 h-5" style="color: var(${colorMap[type]})"></i>
+                        </div>
+                        <div class="truncate">
+                            <p class="font-semibold text-[var(--cor-texto-principal)] truncate">${title}</p>
+                            <p class="font-bold text-sm" style="color: var(${colorMap[type]})">${value}</p>
                         </div>
                     `;
                     itemEl.addEventListener('click', () => showTransactionDetail(itemEl));
-                    itemsContainer.appendChild(itemEl);
+                    container.appendChild(itemEl);
+                });
+                 lucide.createIcons();
+            }
+
+            function createDashboardPieChart() {
+                 if (dashboardPieChartInstance) { dashboardPieChartInstance.destroy(); }
+                 const pieCtx = document.getElementById('dashboard-pie-chart').getContext('2d');
+                 if(!pieCtx) return;
+                 dashboardPieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte', 'Lazer'], datasets: [{ data: [1500, 704.50, 0, 39.90], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte'), getCssVar('--cor-viagem') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
+            }
+
+            function setupEventListeners() {
+                const nextButton = document.getElementById('next-screen-btn');
+                if (nextButton) {
+                    nextButton.addEventListener('click', () => {
+                        const mainScreens = [0, 1, 2, 3, 8, 7, 9];
+                        let currentIndexInSequence = mainScreens.indexOf(currentScreenIndex);
+                        if (currentIndexInSequence === -1) { currentIndexInSequence = 1; }
+                        const nextIndexInSequence = (currentIndexInSequence + 1) % mainScreens.length;
+                        const nextScreenId = mainScreens[nextIndexInSequence];
+                        showScreen(nextScreenId);
+                    });
+                }
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => { 
+                        e.preventDefault(); 
+                        const screenIndex = parseInt(link.getAttribute('data-screen'), 10);
+                        if(!isNaN(screenIndex)) showScreen(screenIndex);
+                    });
                 });
 
-                dateGroupContainer.appendChild(itemsContainer);
-                listContainer.appendChild(dateGroupContainer);
-            });
-
-            lucide.createIcons();
-            applyFilters();
-        }
-
-
-        function setupFilterScreen() {
-            const accounts = accountsAndCards.filter(a => a.type === 'account').map(a => a.name);
-            const cards = accountsAndCards.filter(a => a.type === 'card').map(a => a.name);
-            const allCategories = [...new Set([...expenseCategoriesWithIcons, ...incomeCategoriesWithIcons].map(c => c.name))];
-
-            populateFilterOptions('filter-account-options', accounts, 'account');
-            populateFilterOptions('filter-card-options', cards, 'card');
-            populateFilterOptions('filter-category-options', allCategories, 'category');
-
-            document.getElementById('filter-section-type').style.display = activeTransactionView === 'todos' ? 'block' : 'none';
-            document.getElementById('filter-section-accounts').style.display = ['todos', 'contas'].includes(activeTransactionView) ? 'block' : 'none';
-            document.getElementById('filter-section-cards').style.display = ['todos', 'cartoes'].includes(activeTransactionView) ? 'block' : 'none';
-            document.getElementById('filter-section-status').style.display = activeTransactionView !== 'cartoes' ? 'block' : 'none';
-
-
-            document.querySelectorAll('#screen-21 .filter-chip-btn').forEach(btn => {
-                btn.addEventListener('click', () => btn.classList.toggle('selected'));
-            });
-        }
-
-        function populateFilterOptions(containerId, options, group) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = '';
-            options.forEach(option => {
-                const btn = document.createElement('button');
-                btn.className = 'filter-chip-btn py-2 px-4 rounded-full border-2 border-[var(--cor-borda)] text-sm';
-                btn.dataset.filterGroup = group;
-                btn.dataset.filterValue = option;
-                btn.innerText = option;
-                container.appendChild(btn);
-            });
-        }
-
-        function applyFilters() {
-            const selectedTypes = Array.from(document.querySelectorAll('#filter-type-options .selected')).map(btn => btn.dataset.filterValue);
-            const selectedStatuses = Array.from(document.querySelectorAll('#filter-status-options .selected')).map(btn => btn.dataset.filterValue);
-            const selectedAccounts = [
-                ...Array.from(document.querySelectorAll('#filter-account-options .selected')),
-                ...Array.from(document.querySelectorAll('#filter-card-options .selected'))
-            ].map(btn => btn.dataset.filterValue);
-            const selectedCategories = Array.from(document.querySelectorAll('#filter-category-options .selected')).map(btn => btn.dataset.filterValue);
-
-            const allTransactionItems = document.querySelectorAll('#transaction-list .transaction-item');
-            
-            allTransactionItems.forEach(item => {
-                const itemSourceType = item.dataset.sourceType;
-                const itemType = item.dataset.type;
-                const itemStatus = item.dataset.status;
-                const itemAccount = item.dataset.account;
-                const itemCategory = item.dataset.category;
-
-                const viewMatch = activeTransactionView === 'todos' || 
-                                  (activeTransactionView === 'contas' && itemSourceType === 'account') ||
-                                  (activeTransactionView === 'cartoes' && itemSourceType === 'card');
-
-                const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(itemType);
-                const statusMatch = selectedStatuses.length === 0 || item.dataset.sourceType === 'card' || selectedStatuses.includes(itemStatus);
-                const accountMatch = selectedAccounts.length === 0 || selectedAccounts.includes(itemAccount);
-                const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(itemCategory);
-
-                if (viewMatch && typeMatch && statusMatch && accountMatch && categoryMatch) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            const dateGroups = document.querySelectorAll('#transaction-list .date-group');
-            let hasVisibleItems = false;
-            dateGroups.forEach(group => {
-                const visibleItemsInGroup = group.querySelectorAll('.transaction-item[style*="display: flex"]');
-                if (visibleItemsInGroup.length > 0) {
-                    group.style.display = 'block';
-                    hasVisibleItems = true;
-                } else {
-                    group.style.display = 'none';
-                }
-            });
-
-            const listContainer = document.getElementById('transaction-list');
-            const noResultsMessage = listContainer.querySelector('.no-results-message');
-            if (noResultsMessage) noResultsMessage.remove();
-
-            if (!hasVisibleItems && listContainer) {
-                 listContainer.innerHTML += `<p class="no-results-message text-center text-[var(--cor-texto-secundario)] p-8">Nenhum lançamento encontrado com os filtros selecionados.</p>`;
-            }
-        }
-
-        // --- DASHBOARD SETUP ---
-        function setupDashboard() {
-            // Balance Toggle
-            const toggleBtn = document.getElementById('toggle-balance-btn');
-            const balanceEl = document.getElementById('balance-amount');
-            if (toggleBtn && balanceEl) {
-                if (!toggleBtn.hasListener) {
-                    let balanceVisible = true;
-                    toggleBtn.addEventListener('click', () => {
-                        balanceVisible = !balanceVisible;
-                        balanceEl.innerText = balanceVisible ? 'R$ 12.450,75' : 'R$ ••••••';
-                        toggleBtn.innerHTML = `<i data-lucide="${balanceVisible ? 'eye' : 'eye-off'}" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>`;
-                        lucide.createIcons();
+                const screen0Button = document.querySelector('#screen-0 form button');
+                if (screen0Button) screen0Button.addEventListener('click', () => showScreen(1));
+                
+                const profilePic = document.getElementById('profile-pic');
+                if (profilePic) profilePic.addEventListener('click', () => showScreen(7));
+                
+                const notificationsBtn = document.getElementById('notifications-btn');
+                if (notificationsBtn) notificationsBtn.addEventListener('click', () => showScreen(9));
+                
+                const plansBtn = document.getElementById('plans-btn');
+                if (plansBtn) plansBtn.addEventListener('click', () => showScreen(16));
+                
+                document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', () => showScreen(1)));
+                
+                const saveBtn = document.getElementById('save-new-transaction-btn');
+                if (saveBtn) saveBtn.addEventListener('click', () => showScreen(1));
+                
+                document.querySelectorAll('.prev-month-btn').forEach(btn => btn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() - 1);
+                    updateAllMonthDisplays();
+                }));
+                document.querySelectorAll('.next-month-btn').forEach(btn => btn.addEventListener('click', () => {
+                    currentDate.setMonth(currentDate.getMonth() + 1);
+                    updateAllMonthDisplays();
+                }));
+                
+                const deleteTransactionBtn = document.getElementById('delete-transaction-btn');
+                if (deleteTransactionBtn) {
+                    deleteTransactionBtn.addEventListener('click', () => {
+                        showConfirmationModal('Deseja realmente excluir este lançamento?', () => {
+                            if(currentTransactionToEdit) { currentTransactionToEdit.remove(); }
+                            showScreen(2);
+                        });
                     });
-                    toggleBtn.hasListener = true;
+                }
+
+                const editTransactionBtn = document.getElementById('edit-transaction-btn');
+                if (editTransactionBtn) {
+                    editTransactionBtn.addEventListener('click', () => {
+                        alert("A tela de edição precisa ser implementada com o novo layout.");
+                    });
+                }
+
+                const deleteGoalBtn = document.getElementById('delete-goal-btn');
+                if (deleteGoalBtn) {
+                     deleteGoalBtn.addEventListener('click', () => {
+                        showConfirmationModal('Deseja realmente excluir esta meta?', () => { showScreen(8); });
+                    });
+                }
+                
+                const addGoalTransactionBtn = document.getElementById('add-goal-transaction-btn');
+                if (addGoalTransactionBtn) {
+                    addGoalTransactionBtn.addEventListener('click', () => {
+                        const goalTitleEl = document.getElementById('goal-detail-title');
+                        if(goalTitleEl) {
+                            const goalTitle = goalTitleEl.innerText;
+                            showScreen(5, { defaults: {
+                                category: 'Metas',
+                                goal: goalTitle,
+                                description: `Aporte para meta: ${goalTitle}`
+                            }});
+                        }
+                    });
+                }
+
+                const questionnaireCard = document.getElementById('questionnaire-card');
+                if (questionnaireCard) {
+                    questionnaireCard.addEventListener('click', () => {
+                        currentQuestionIndex = 0;
+                        userAnswers.length = 0;
+                        showScreen(14);
+                        loadQuestion(currentQuestionIndex);
+                    });
+                }
+                
+                const nextQuestionBtn = document.getElementById('next-question-btn');
+                if (nextQuestionBtn) {
+                     nextQuestionBtn.addEventListener('click', () => {
+                        if (currentQuestionIndex < questions.length - 1) {
+                            currentQuestionIndex++;
+                            loadQuestion(currentQuestionIndex);
+                        } else {
+                            displayResults();
+                            showScreen(15);
+                        }
+                    });
+                }
+                
+                const skipQuestionnaireBtn = document.getElementById('skip-questionnaire-btn');
+                if (skipQuestionnaireBtn) skipQuestionnaireBtn.addEventListener('click', () => showScreen(1));
+
+                document.querySelectorAll('.card-carousel').forEach(carousel => {
+                     let isDown = false, startX, scrollLeft, isDragging = false;
+                    carousel.addEventListener('mousedown', (e) => {
+                        isDown = true; isDragging = false; carousel.classList.add('active');
+                        startX = e.pageX - carousel.offsetLeft; scrollLeft = carousel.scrollLeft;
+                    });
+                    carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('active'); });
+                    carousel.addEventListener('mouseup', (e) => {
+                        isDown = false; carousel.classList.remove('active');
+                        if(isDragging) { e.preventDefault(); }
+                    });
+                    carousel.addEventListener('mousemove', (e) => {
+                        if (!isDown) return; e.preventDefault(); isDragging = true;
+                        const x = e.pageX - carousel.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        carousel.scrollLeft = scrollLeft - walk;
+                    });
+                    Array.from(carousel.children).forEach(child => {
+                        child.addEventListener('click', (e) => { if(isDragging) { e.preventDefault(); e.stopPropagation(); } });
+                    });
+                });
+                
+                const prevBillBtn = document.getElementById('prev-bill-btn');
+                if (prevBillBtn) prevBillBtn.addEventListener('click', () => {
+                    if (currentBillIndex > 0) { currentBillIndex--; updateBillDisplay(); }
+                });
+                
+                const nextBillBtn = document.getElementById('next-bill-btn');
+                if (nextBillBtn) nextBillBtn.addEventListener('click', () => {
+                    if (currentBillIndex < sampleBills.length - 1) { currentBillIndex++; updateBillDisplay(); }
+                });
+
+                const openFilterBtn = document.getElementById('open-filter-btn');
+                if (openFilterBtn) openFilterBtn.addEventListener('click', () => showScreen(21));
+                
+                document.querySelectorAll('.view-tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.view-tab-btn').forEach(b => b.classList.remove('selected'));
+                        btn.classList.add('selected');
+                        activeTransactionView = btn.dataset.view;
+                        renderTransactions();
+                    });
+                });
+
+                const resetFiltersBtn = document.getElementById('reset-filters-btn');
+                if (resetFiltersBtn) {
+                    resetFiltersBtn.addEventListener('click', () => {
+                        document.querySelectorAll('#screen-21 .filter-chip-btn.selected').forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                    });
+                }
+
+                const applyFiltersBtn = document.getElementById('apply-filters-btn');
+                if (applyFiltersBtn) {
+                    applyFiltersBtn.addEventListener('click', () => {
+                        applyFilters();
+                        showScreen(2);
+                    });
                 }
             }
 
-            // Populate Carousels
-            populateAccountsCarousel();
-            populateCardsCarousel();
-            populateRecentTransactionsCarousel();
-            createDashboardPieChart();
-        }
-
-        function populateAccountsCarousel() {
-            const container = document.getElementById('accounts-carousel');
-            if (!container) return;
-            container.innerHTML = '';
-            accountsAndCards.filter(item => item.type === 'account').forEach(account => {
-                const card = document.createElement('div');
-                card.className = 'w-40 h-24 p-3 rounded-xl bg-[var(--fundo-card)] flex flex-col justify-between cursor-pointer';
-                card.innerHTML = `
-                    <div>
-                        <p class="font-bold text-sm">${account.bank}</p>
-                        <p class="text-xs text-[var(--cor-texto-secundario)]">${account.name}</p>
-                    </div>
-                    <p class="font-bold text-lg text-right">${account.balance}</p>
-                `;
-                container.appendChild(card);
-            });
-            // Add "Add Account" button
-            container.innerHTML += `
-                <div class="w-40 h-24 rounded-xl bg-[var(--fundo-elemento)] border-2 border-dashed border-[var(--cor-borda)] flex items-center justify-center cursor-pointer hover:bg-white/10">
-                    <div class="text-center">
-                        <i data-lucide="plus" class="w-6 h-6 mx-auto text-[var(--cor-texto-secundario)]"></i>
-                        <p class="mt-1 text-xs font-semibold text-[var(--cor-texto-secundario)]">Adicionar Conta</p>
-                    </div>
-                </div>`;
-            lucide.createIcons();
-        }
-
-        function populateCardsCarousel() {
-            const container = document.getElementById('cards-carousel');
-             if (!container) return;
-            container.innerHTML = '';
-            accountsAndCards.filter(item => item.type === 'card').forEach(card => {
-                const cardEl = document.createElement('div');
-                cardEl.className = 'w-40 h-24 p-3 rounded-xl bg-gradient-to-br from-gray-700 to-gray-900 flex flex-col justify-between cursor-pointer';
-                cardEl.innerHTML = `
-                    <span class="text-white font-bold text-sm">Castelo Bank</span>
-                    <div>
-                        <p class="text-gray-300 text-xs">${card.name.replace(' Final', '...')}</p>
-                        <p class="text-white font-mono tracking-wider text-sm">**** ${card.name.slice(-4)}</p>
-                    </div>
-                `;
-                container.appendChild(cardEl);
-            });
-             // Add "Add Card" button
-            container.innerHTML += `
-                <div class="w-40 h-24 rounded-xl bg-[var(--fundo-elemento)] border-2 border-dashed border-[var(--cor-borda)] flex items-center justify-center cursor-pointer hover:bg-white/10" onclick="showScreen(18)">
-                    <div class="text-center">
-                        <i data-lucide="plus" class="w-6 h-6 mx-auto text-[var(--cor-texto-secundario)]"></i>
-                        <p class="mt-1 text-xs font-semibold text-[var(--cor-texto-secundario)]">Adicionar Cartão</p>
-                    </div>
-                </div>`;
-            lucide.createIcons();
-        }
-        
-        function populateRecentTransactionsCarousel() {
-            const container = document.getElementById('recent-transactions-carousel');
-            if (!container) return;
-            container.innerHTML = '';
-            const templateContainer = document.getElementById('all-transactions-template');
-            const allItemsData = Array.from(templateContainer.children).map(item => item.dataset).slice(0, 5); // Get first 5 for example
-
-            allItemsData.forEach(data => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'transaction-item bg-[var(--fundo-card)] p-3 rounded-lg flex-shrink-0 w-60 flex items-center cursor-pointer hover:bg-white/10';
-                Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
-
-                const { title, value, category, type } = data;
-                const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
-                const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
-
-                itemEl.innerHTML = `
-                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-[#002147] mr-3">
-                        <i data-lucide="${iconMap[category] || iconMap[type] || 'tag'}" class="w-5 h-5" style="color: var(${colorMap[type]})"></i>
-                    </div>
-                    <div class="truncate">
-                        <p class="font-semibold text-[var(--cor-texto-principal)] truncate">${title}</p>
-                        <p class="font-bold text-sm" style="color: var(${colorMap[type]})">${value}</p>
-                    </div>
-                `;
-                itemEl.addEventListener('click', () => showTransactionDetail(itemEl));
-                container.appendChild(itemEl);
-            });
-             lucide.createIcons();
-        }
-
-        function createDashboardPieChart() {
-             if (dashboardPieChartInstance) { dashboardPieChartInstance.destroy(); }
-             const pieCtx = document.getElementById('dashboard-pie-chart').getContext('2d');
-             if(!pieCtx) return;
-             dashboardPieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte', 'Lazer'], datasets: [{ data: [1500, 704.50, 0, 39.90], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte'), getCssVar('--cor-viagem') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
-        }
-
-
-        window.onload = () => {
             setupEventListeners();
             showScreen(0);
             updateAllMonthDisplays();
-        };
+        });
     </script>
 </body>
 </html>
