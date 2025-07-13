@@ -67,6 +67,15 @@
             scroll-snap-align: start;
             flex-shrink: 0;
         }
+        
+        /* Estilo para o toggle switch */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: var(--cor-acento-dourado);
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: var(--cor-acento-dourado);
+        }
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
@@ -81,12 +90,12 @@
                 <div class="transaction-item" data-source-type="account" data-type="income" data-title="Salário Empresa X" data-category="Salário" data-value="+ R$ 5.000,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pago" data-description="Recebimento do salário mensal."></div>
                 <div class="transaction-item" data-source-type="account" data-type="expense" data-title="Aluguel" data-category="Moradia" data-value="- R$ 1.500,00" data-date="02 de Julho, 2025" data-account="Conta Corrente" data-status="pendente" data-description="Pagamento do aluguel do apartamento."></div>
                 <div class="transaction-item" data-source-type="card" data-type="expense" data-title="iFood" data-category="Alimentação" data-value="- R$ 54,30" data-date="01 de Julho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Pedido de almoço."></div>
-                <div class="transaction-item" data-source-type="card" data-type="expense" data-title="Netflix" data-category="Lazer" data-value="- R$ 39,90" data-date="30 de Junho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Mensalidade Netflix."></div>
+                <div class="transaction-item" data-source-type="card" data-type="expense" data-title="Netflix" data-category="Assinaturas" data-value="- R$ 39,90" data-date="30 de Junho, 2025" data-account="Castelo Bank Final 1234" data-status="pago" data-description="Mensalidade Netflix."></div>
             </div>
 
             <div id="screen-0" class="screen w-full h-full flex flex-col items-center justify-center p-6 z-10">
                 <div class="w-full max-w-md text-center">
-                    <img src="logo castelo forte.png" alt="Logo Castelo Forte" class="mx-auto w-56 mb-8 rounded-lg">
+                    <img src="./logo castelo forte.png" alt="Logo Castelo Forte" class="mx-auto w-56 mb-8 rounded-lg">
                     <form class="space-y-4" onsubmit="event.preventDefault();">
                         <input type="email" required class="appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm" placeholder="Email">
                         <input type="password" required class="appearance-none block w-full px-3 py-3 bg-[var(--fundo-elemento)] border border-[var(--cor-borda)] placeholder-[var(--cor-texto-secundario)] text-[var(--cor-texto-principal)] rounded-md focus:outline-none focus:ring-[var(--cor-acento-dourado)] focus:border-[var(--cor-acento-dourado)] sm:text-sm" placeholder="Senha">
@@ -395,8 +404,20 @@
                                 </div>
                             </div>
                         </div>
-                
-                        <div>
+
+                        <!-- NEW: Fixed Transaction Toggle -->
+                        <div id="new-fixed-transaction-section" class="hidden">
+                            <div class="flex items-center justify-between p-4 bg-[var(--fundo-elemento)] rounded-lg">
+                                <span class="font-medium text-sm text-[var(--cor-texto-principal)]">Lançamento Fixo</span>
+                                <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="toggle-fixed" id="new-fixed-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                                    <label for="new-fixed-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-600 cursor-pointer"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single account selector (for income/expense) -->
+                        <div id="new-account-section">
                              <label id="new-account-label" class="text-sm font-medium text-[var(--cor-texto-secundario)]">Conta</label>
                              <a href="#" class="flex items-center justify-between p-4 bg-[var(--fundo-elemento)] rounded-lg w-full text-left hover:bg-white/10 transition-colors" onclick="showScreen(20)">
                                 <div id="new-account-selector" class="flex items-center">
@@ -406,6 +427,31 @@
                                 <i data-lucide="chevron-right" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>
                             </a>
                         </div>
+                        
+                        <!-- NEW: Transfer account selectors -->
+                        <div id="new-transfer-accounts-section" class="hidden space-y-6">
+                             <div>
+                                <label class="text-sm font-medium text-[var(--cor-texto-secundario)]">Conta de Origem</label>
+                                <a href="#" class="flex items-center justify-between p-4 bg-[var(--fundo-elemento)] rounded-lg w-full text-left hover:bg-white/10 transition-colors" onclick="showScreen(20)">
+                                    <div id="new-transfer-source-selector" class="flex items-center">
+                                        <i data-lucide="landmark" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i>
+                                        <span>Conta Corrente</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>
+                                </a>
+                             </div>
+                             <div>
+                                <label class="text-sm font-medium text-[var(--cor-texto-secundario)]">Conta de Destino</label>
+                                <a href="#" class="flex items-center justify-between p-4 bg-[var(--fundo-elemento)] rounded-lg w-full text-left hover:bg-white/10 transition-colors" onclick="showScreen(20)">
+                                    <div id="new-transfer-destination-selector" class="flex items-center">
+                                        <i data-lucide="piggy-bank" class="w-5 h-5 text-[var(--cor-acento-dourado)] mr-3"></i>
+                                        <span>Conta Poupança</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="w-5 h-5 text-[var(--cor-texto-secundario)]"></i>
+                                </a>
+                             </div>
+                        </div>
+
                     </form>
                 </main>
                 <footer class="p-4">
@@ -1039,6 +1085,7 @@
                 { name: 'Viagem de Férias', icon: 'plane' }
             ];
 
+            // UPDATED: Added more categories
             const expenseCategoriesWithIcons = [
                 { name: 'Metas', icon: 'target' },
                 { name: 'Moradia', icon: 'home' }, 
@@ -1047,13 +1094,20 @@
                 { name: 'Lazer', icon: 'gamepad-2' },
                 { name: 'Saúde', icon: 'heart-pulse' }, 
                 { name: 'Educação', icon: 'book-open' },
+                { name: 'Assinaturas', icon: 'gem' },
+                { name: 'Compras', icon: 'shopping-bag' },
+                { name: 'Impostos', icon: 'landmark' },
+                { name: 'Cuidados Pessoais', icon: 'user' },
                 { name: 'Outras Despesas', icon: 'tag' }
             ];
             const incomeCategoriesWithIcons = [
                 { name: 'Salário', icon: 'briefcase' }, 
                 { name: 'Vendas', icon: 'dollar-sign' },
                 { name: 'Investimentos', icon: 'trending-up' }, 
-                { name: 'Outras Receitas', icon: 'gift' }
+                { name: 'Rendimentos', icon: 'piggy-bank' },
+                { name: 'Freelance', icon: 'laptop' },
+                { name: 'Presente', icon: 'gift' },
+                { name: 'Outras Receitas', icon: 'plus-circle' }
             ];
             const accountsAndCards = [
                 { name: 'Conta Corrente', type: 'account', icon: 'landmark', bank: 'Nubank', balance: 'R$ 8.540,20' },
@@ -1216,10 +1270,12 @@
                 if (!form) return;
                 form.reset();
 
-                const typeTabs = form.querySelectorAll('.transaction-type-tab-btn');
+                // Get all form elements
+                const typeTabs = form.querySelectorAll(`.${prefix}-type-tab-btn, .transaction-type-tab-btn`);
                 const valueLabel = document.getElementById(`${prefix}-value-label`);
                 const valueInput = document.getElementById(`${prefix}-transaction-value`);
                 const nameInput = document.getElementById(`${prefix}-transaction-name`);
+                const categorySection = document.getElementById(`${prefix}-category-section`);
                 const categorySelector = document.getElementById(`${prefix}-category-selector`);
                 const goalSection = document.getElementById(`${prefix}-goal-selection-section`);
                 const goalSelector = document.getElementById(`${prefix}-goal-selector`);
@@ -1228,9 +1284,14 @@
                 const creditCardOptions = document.getElementById(`${prefix}-credit-card-options`);
                 const paymentConditionBtns = form.querySelectorAll(`#${prefix}-payment-condition .toggle-btn`);
                 const installmentsSection = document.getElementById(`${prefix}-installments-section`);
+                
+                // NEW elements for fixed transaction and transfers
+                const fixedTransactionSection = document.getElementById(`${prefix}-fixed-transaction-section`);
+                const singleAccountSection = document.getElementById(`${prefix}-account-section`);
+                const transferAccountsSection = document.getElementById(`${prefix}-transfer-accounts-section`);
                 const accountLabel = document.getElementById(`${prefix}-account-label`);
                 const accountSelector = document.getElementById(`${prefix}-account-selector`);
-                
+
                 function updateButtonSelection(buttons, selectedBtn) {
                     buttons.forEach(btn => btn.classList.remove('selected'));
                     selectedBtn.classList.add('selected');
@@ -1240,9 +1301,14 @@
                     tab.addEventListener('click', () => {
                         updateButtonSelection(typeTabs, tab);
                         const type = tab.dataset.type;
-                        expenseOptions.classList.toggle('hidden', type !== 'expense');
-                        document.getElementById('new-category-section').classList.toggle('hidden', type === 'transfer');
                         
+                        // Show/Hide sections based on type
+                        expenseOptions.classList.toggle('hidden', type !== 'expense');
+                        categorySection.classList.toggle('hidden', type === 'transfer');
+                        fixedTransactionSection.classList.toggle('hidden', type === 'transfer');
+                        singleAccountSection.classList.toggle('hidden', type === 'transfer');
+                        transferAccountsSection.classList.toggle('hidden', type !== 'transfer');
+
                         if (type === 'expense') {
                             valueLabel.innerText = 'Valor da Despesa';
                             valueInput.style.color = getCssVar('--cor-despesa');
@@ -1550,7 +1616,7 @@
                         Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
 
                         const { title, value, category, type, status } = data;
-                        const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
+                        const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target', 'Assinaturas': 'gem', 'Compras': 'shopping-bag' };
                         const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
                         const statusColorMap = { 'pago': 'text-[var(--cor-receita)]', 'pendente': 'text-[var(--cor-despesa)]' };
                         const statusTextMap = { 'pago': 'pago', 'pendente': 'pendente' };
@@ -1815,7 +1881,7 @@
                     Object.keys(data).forEach(key => itemEl.dataset[key] = data[key]);
 
                     const { title, value, category, type } = data;
-                    const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target' };
+                    const iconMap = { 'income': 'briefcase', 'expense': 'shopping-cart', 'transfer': 'repeat', 'Moradia': 'home', 'Alimentação': 'shopping-cart', 'Transporte': 'car', 'Lazer': 'gamepad-2', 'Saúde': 'heart-pulse', 'Educação': 'book-open', 'Salário': 'briefcase', 'Vendas': 'dollar-sign', 'Investimentos': 'trending-up', 'Metas': 'target', 'Assinaturas': 'gem' };
                     const colorMap = { 'income': '--cor-receita', 'expense': '--cor-despesa', 'transfer': '--cor-transferencia' };
 
                     itemEl.innerHTML = `
@@ -1837,7 +1903,7 @@
                  if (dashboardPieChartInstance) { dashboardPieChartInstance.destroy(); }
                  const pieCtx = document.getElementById('dashboard-pie-chart').getContext('2d');
                  if(!pieCtx) return;
-                 dashboardPieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte', 'Lazer'], datasets: [{ data: [1500, 704.50, 0, 39.90], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte'), getCssVar('--cor-viagem') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
+                 dashboardPieChartInstance = new Chart(pieCtx, { type: 'doughnut', data: { labels: ['Moradia', 'Alimentação', 'Transporte', 'Assinaturas'], datasets: [{ data: [1500, 704.50, 0, 39.90], backgroundColor: [ getCssVar('--cor-moradia'), getCssVar('--cor-alimentacao'), getCssVar('--cor-transporte'), getCssVar('--cor-viagem') ], borderColor: getCssVar('--fundo-elemento'), borderWidth: 4, hoverOffset: 8 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { let label = context.label || ''; if (label) { label += ': '; } if (context.parsed !== null) { label += new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(context.parsed); } return label; } } } } } });
             }
 
             function populateAccountDetailScreen(account) {
